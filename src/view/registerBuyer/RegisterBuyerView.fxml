@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="334.0" prefWidth="540.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RegisterBuyerController">
+   <children>
+      <Label layoutX="144.0" layoutY="65.0" text="Account Number:" />
+      <Label layoutX="145.0" layoutY="125.0" text="Username:" />
+      <Label layoutX="146.0" layoutY="181.0" text="Password:" />
+      <TextField layoutX="260.0" layoutY="121.0" />
+      <Button layoutX="153.0" layoutY="270.0" mnemonicParsing="false" text="Save" />
+      <Button layoutX="366.0" layoutY="270.0" mnemonicParsing="false" text="Cancel" />
+      <PasswordField layoutX="260.0" layoutY="177.0" />
+      <TextField layoutX="260.0" layoutY="61.0" />
+   </children>
+</AnchorPane>
