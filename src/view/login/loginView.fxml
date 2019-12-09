@@ -12,17 +12,17 @@
          <font>
             <Font size="30.0" />
          </font></Label>
-      <Button layoutX="200.0" layoutY="99.0" mnemonicParsing="false" text="View Products">
+      <Button layoutX="200.0" layoutY="99.0" mnemonicParsing="false" onAction="#openViewCars" text="View Products">
          <font>
             <Font size="25.0" />
          </font></Button>
       <Label layoutX="95.0" layoutY="182.0" text="Account Number:" />
       <Label layoutX="95.0" layoutY="223.0" text="Password:" />
-      <TextField layoutX="220.0" layoutY="178.0" />
-      <TextField layoutX="220.0" layoutY="219.0" />
-      <Button layoutX="401.0" layoutY="178.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="144.0" text="Log In" />
-      <Button layoutX="146.0" layoutY="296.0" mnemonicParsing="false" text="New Buyer" />
-      <Button layoutX="369.0" layoutY="296.0" mnemonicParsing="false" text="New Seller" />
-      <Button layoutX="401.0" layoutY="219.0" mnemonicParsing="false" text="Account Management" />
+      <TextField fx:id="accountNumber" layoutX="220.0" layoutY="178.0" />
+      <TextField fx:id="password" layoutX="220.0" layoutY="219.0" />
+      <Button layoutX="401.0" layoutY="178.0" mnemonicParsing="false" onAction="#logIn" prefHeight="23.0" prefWidth="144.0" text="Log In" />
+      <Button layoutX="146.0" layoutY="296.0" mnemonicParsing="false" onAction="#openAddBuyer" text="New Buyer" />
+      <Button layoutX="369.0" layoutY="296.0" mnemonicParsing="false" onAction="#openAddSeller" text="New Seller" />
+      <Button layoutX="401.0" layoutY="219.0" mnemonicParsing="false" onAction="#openAccountManagement" text="Account Management" />
    </children>
 </AnchorPane>

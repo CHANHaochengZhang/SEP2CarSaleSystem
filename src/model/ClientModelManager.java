@@ -20,7 +20,9 @@ import model.sellerModel.SellerModel;
 
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class ClientModelManager implements ClientModel {
     private LoginModel loginModel;
@@ -99,4 +101,21 @@ public class ClientModelManager implements ClientModel {
     public ArrayList<Message> getMessageByAddresser(int currentNo, int addresserNo) {
         return null;
     }
+
+
+
+
+
+// get time for message
+    private String calcTimeStamp() {
+        SimpleDateFormat sdfDate =
+                new SimpleDateFormat("yyyy/MM/dd HH:mm");
+        Date now = new Date();
+        return sdfDate.format(now);
+    }
 }
+
+
+
+
+
