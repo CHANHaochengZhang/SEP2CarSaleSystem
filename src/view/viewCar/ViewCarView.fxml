@@ -17,7 +17,7 @@
           <TableColumn fx:id="mileAge" prefWidth="110.0" text="MileAge(in KM)" />
             <TableColumn fx:id="brand" prefWidth="59.0" text="Brand" />
             <TableColumn fx:id="model" prefWidth="82.0" text="Body Type" />
-            <TableColumn fx:id="prince" minWidth="0.0" prefWidth="88.0" text="Price(DKK)" />
+            <TableColumn fx:id="price" minWidth="0.0" prefWidth="88.0" text="Price(DKK)" />
         </columns>
       </TableView>
       <HBox layoutX="646.0" layoutY="66.0" prefHeight="23.0" prefWidth="200.0">
@@ -27,7 +27,7 @@
                   <Insets right="5.0" />
                </HBox.margin>
             </TextField>
-            <Button mnemonicParsing="false" onAction="#searchKeyWordButtom" onKeyPressed="#enterPressed" prefHeight="23.0" prefWidth="79.0" text="Search" />
+            <Button mnemonicParsing="false" onAction="#searchKeyWordButton" onKeyPressed="#enterPressed" prefHeight="23.0" prefWidth="79.0" text="Search" />
          </children>
       </HBox>
       <ComboBox fx:id="priceRange" layoutX="21.0" layoutY="66.0" prefWidth="150.0" promptText="Price" />

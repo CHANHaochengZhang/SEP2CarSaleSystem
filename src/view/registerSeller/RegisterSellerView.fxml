@@ -5,24 +5,32 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="585.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.registerBuyer.RegisterSellerController">
+<AnchorPane prefHeight="483.0" prefWidth="576.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.registerSeller.RegisterSellerController">
    <children>
-      <Label layoutX="167.0" layoutY="160.0" text="Street:" />
-      <Label layoutX="148.0" layoutY="250.0" text="PostalCode:" />
+      <Label layoutX="168.0" layoutY="237.0" text="Street:" />
+      <Label layoutX="153.0" layoutY="321.0" text="PostalCode:" />
       <Label layoutX="157.0" layoutY="119.0" text="Password:" />
       <Label layoutX="155.0" layoutY="79.0" text="Username:" />
-      <Label layoutX="131.0" layoutY="291.0" text="Phone Number(optional):" />
+      <Label layoutX="142.0" layoutY="359.0" text="Phone Number:" />
       <Label layoutX="144.0" layoutY="37.0" text="Account Number:" />
-      <Label layoutX="170.0" layoutY="207.0" text="City:" />
-      <TextField layoutX="288.0" layoutY="75.0" />
-      <TextField layoutX="289.0" layoutY="33.0" />
-      <TextField layoutX="288.0" layoutY="156.0" />
-      <TextField layoutX="288.0" layoutY="203.0" />
-      <TextField layoutX="288.0" layoutY="246.0" />
-      <TextField layoutX="288.0" layoutY="287.0" />
-      <Button layoutX="161.0" layoutY="329.0" mnemonicParsing="false" text="Save" />
-      <Button layoutX="369.0" layoutY="329.0" mnemonicParsing="false" text="Cancel" />
-      <PasswordField layoutX="289.0" layoutY="115.0" />
+      <Label layoutX="173.0" layoutY="282.0" text="City:" />
+      <TextField fx:id="userName" layoutX="288.0" layoutY="75.0" />
+      <TextField fx:id="street" layoutX="281.0" layoutY="233.0" />
+      <TextField fx:id="city" layoutX="281.0" layoutY="278.0" />
+      <TextField fx:id="postalCode" layoutX="281.0" layoutY="317.0" />
+      <TextField fx:id="phone" layoutX="281.0" layoutY="355.0" />
+      <Button layoutX="162.0" layoutY="411.0" mnemonicParsing="false" onAction="#Save" text="Save" />
+      <Button layoutX="369.0" layoutY="411.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" />
+      <PasswordField fx:id="password" layoutX="289.0" layoutY="115.0" />
+      <Text fx:id="accountNumber" layoutX="295.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " wrappingWidth="147.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="126.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type password again" />
+      <PasswordField fx:id="passwordAgain" layoutX="289.0" layoutY="152.0" />
    </children>
 </AnchorPane>

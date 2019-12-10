@@ -6,11 +6,11 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="881.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.mailBox.MailBoxController">
    <children>
-      <TableView layoutX="22.0" layoutY="35.0" prefHeight="310.0" prefWidth="842.0">
+      <TableView fx:id="mailListTable" layoutX="22.0" layoutY="35.0" prefHeight="310.0" prefWidth="842.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Name" />
-          <TableColumn prefWidth="514.0" text="Text" />
-            <TableColumn prefWidth="252.0" text="Time" />
+          <TableColumn fx:id="messageName" prefWidth="75.0" text="Name" />
+          <TableColumn fx:id="messageText" prefWidth="514.0" text="Text" />
+            <TableColumn fx:id="messageTime" prefWidth="252.0" text="Time" />
         </columns>
       </TableView>
    </children>

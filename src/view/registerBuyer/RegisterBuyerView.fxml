@@ -5,16 +5,24 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="334.0" prefWidth="540.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RegisterBuyerController">
+<AnchorPane prefHeight="334.0" prefWidth="540.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.registerBuyer.RegisterBuyerController">
    <children>
       <Label layoutX="144.0" layoutY="65.0" text="Account Number:" />
       <Label layoutX="145.0" layoutY="125.0" text="Username:" />
       <Label layoutX="146.0" layoutY="181.0" text="Password:" />
-      <TextField layoutX="260.0" layoutY="121.0" />
-      <Button layoutX="153.0" layoutY="270.0" mnemonicParsing="false" text="Save" />
-      <Button layoutX="366.0" layoutY="270.0" mnemonicParsing="false" text="Cancel" />
-      <PasswordField layoutX="260.0" layoutY="177.0" />
-      <TextField layoutX="260.0" layoutY="61.0" />
+      <TextField fx:id="userName" layoutX="260.0" layoutY="121.0" />
+      <Button layoutX="153.0" layoutY="270.0" mnemonicParsing="false" onAction="#save" text="Save" />
+      <Button layoutX="366.0" layoutY="270.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" />
+      <PasswordField fx:id="password" layoutX="260.0" layoutY="177.0" />
+      <Label layoutX="114.0" layoutY="220.0" text="Type Password again:" />
+      <PasswordField fx:id="passwordAgain" layoutX="260.0" layoutY="216.0" />
+      <Text fx:id="accountNumber" layoutX="260.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " wrappingWidth="161.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

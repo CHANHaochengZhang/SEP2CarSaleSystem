@@ -7,21 +7,22 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
+import model.carModel.Car;
 import model.carModel.Model;
 
 public class ViewCarController {
     @FXML
-    private TableView carTable;
+    private TableView<Car> carTable;
     @FXML
-    private TableColumn carName;
+    private TableColumn<Car,String> carName;
     @FXML
-    private TableColumn mileAge;
+    private TableColumn<Car, Integer> mileAge;
     @FXML
-    private TableColumn brand;
+    private TableColumn<Car,String > brand;
     @FXML
-    private TableColumn model;
+    private TableColumn<Car,Model> model;
     @FXML
-    private TableColumn prince;
+    private TableColumn<Car, Integer> price;
     @FXML
     private TextField searchField;
     @FXML
@@ -31,7 +32,7 @@ public class ViewCarController {
     @FXML
     private ComboBox<Model> carModels;
 
-    public void searchKeyWordButtom(ActionEvent actionEvent) {
+    public void searchKeyWordButton(ActionEvent actionEvent) {
     }
 
     public void enterPressed(KeyEvent keyEvent) {
