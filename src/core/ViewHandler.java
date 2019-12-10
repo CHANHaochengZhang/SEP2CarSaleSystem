@@ -22,6 +22,7 @@ public class ViewHandler {
     public void start() {
         openLogin();
         mainStage.show();
+
     }
 
     public void openLogin() {
@@ -48,10 +49,11 @@ public class ViewHandler {
         try {
             Parent root = loader.load();
             RegisterBuyerController ctrl = loader.getController();
-            ctrl.init(viewModelFactory);
+            ctrl.init();
             addBuyerScene = new Scene(root);
             mainStage.setTitle("Register as Buyer");
             mainStage.setScene(addBuyerScene);
+
         } catch (IOException e) {
             e.printStackTrace();
         }

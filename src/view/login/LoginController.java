@@ -29,6 +29,11 @@ public class LoginController {
     }
 
     public void openAddSeller(ActionEvent actionEvent) {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Warning Dialog");alert.setHeaderText("Look, a Warning Dialog");
+        alert.setContentText("Careful with the next step!");
+
+        alert.showAndWait();
     }
 
     public void openAccountManagement(ActionEvent actionEvent) {

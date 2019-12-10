@@ -18,6 +18,8 @@ import model.sellerModel.Seller;
 import model.sellerModel.SellerAdd;
 import model.sellerModel.SellerModel;
 
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.text.SimpleDateFormat;
@@ -31,6 +33,8 @@ public class ClientModelManager implements ClientModel {
     private CarModel carModel;
     private DisplayCarModel displayCarModel;
     private MailModel mailModel;
+
+    private PropertyChangeSupport support = new PropertyChangeSupport(this);
 
     public ClientModelManager() {
         try {
@@ -103,7 +107,14 @@ public class ClientModelManager implements ClientModel {
     }
 
 
-
+    @Override
+    public void addPropertyChangeListener(String eventName, PropertyChangeListener listener) {
+        if(eventName == null || "".equals(eventName)) {
+            support.addPropertyChangeListener(listener);
+        } else {
+            support.addPropertyChangeListener(eventName, listener);
+        }
+    }
 
 
 // get time for message
@@ -113,6 +124,8 @@ public class ClientModelManager implements ClientModel {
         Date now = new Date();
         return sdfDate.format(now);
     }
+
+
 }
 
 
