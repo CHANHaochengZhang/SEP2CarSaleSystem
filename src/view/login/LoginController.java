@@ -25,4 +25,7 @@ public class LoginController {
 
     public void openAccountManagement(ActionEvent actionEvent) {
     }
+
+    public void init() {
+    }
 }

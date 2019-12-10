@@ -1,4 +1,12 @@
 package core;
 
-public class CarSystemApp {
+import javafx.application.Application;
+import javafx.stage.Stage;
+
+public class CarSystemApp extends Application {
+    @Override
+    public void start(Stage stage) throws Exception {
+        ViewHandler viewHandler = new ViewHandler();
+        viewHandler.start();
+    }
 }
