@@ -15,8 +15,9 @@ public class ViewHandler {
     private Scene addBuyerScene;
     private ViewModelFactory viewModelFactory;
 
-    public ViewHandler() {
-        mainStage = new Stage();
+    public ViewHandler(Stage stage, ViewModelFactory vmf) {
+        viewModelFactory = vmf;
+        mainStage = stage;
     }
 
     public void start() {
@@ -32,7 +33,7 @@ public class ViewHandler {
         try {
             Parent root = loader.load();
             LoginController ctrl = loader.getController();
-            ctrl.init();
+            ctrl.init(viewModelFactory.getLoginVM(), this);
             mainStage.setTitle("Log in");
             Scene loginScene = new Scene(root);
             mainStage.setScene(loginScene);

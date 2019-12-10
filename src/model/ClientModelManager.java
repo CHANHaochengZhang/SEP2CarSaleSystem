@@ -113,6 +113,7 @@ public class ClientModelManager implements ClientModel {
             support.addPropertyChangeListener(listener);
         } else {
             support.addPropertyChangeListener(eventName, listener);
+
         }
     }
 
