@@ -29,7 +29,7 @@ public class LoginController {
             int a = Integer.valueOf(r);
             String p = password.getText();
             ClientModel cm = new ClientModelManager();
-            System.out.println(cm.logIn(a,p));
+            System.out.println(cm.logIn(a, p));
         } catch (NumberFormatException e) {
             e.printStackTrace();
         }
@@ -37,7 +37,7 @@ public class LoginController {
     }
 
     public void openAddBuyer(ActionEvent actionEvent) {
-
+        viewHandler.openAddBuyer();
     }
 
     public void openAddSeller(ActionEvent actionEvent) {
@@ -52,7 +52,7 @@ public class LoginController {
     public void openAccountManagement(ActionEvent actionEvent) {
     }
 
-    public void init(LoginVM vm,ViewHandler vh) {
+    public void init(LoginVM vm, ViewHandler vh) {
         this.viewHandler = vh;
     }
 }

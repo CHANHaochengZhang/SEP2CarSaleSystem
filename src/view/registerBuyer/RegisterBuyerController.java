@@ -27,7 +27,7 @@ public class RegisterBuyerController {
     public void cancel(ActionEvent actionEvent) {
     }
 
-    public void init() {
-
+    public void init(RegisterBuyerVM vm, ViewHandler vh) {
+        this.viewHandler = vh;
     }
 }

@@ -45,18 +45,24 @@ public class ViewHandler {
 
     public void openAddBuyer() {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../view/registerBuyer/RegisterBuyerView.fxml"));
+        if (addBuyerScene == null) {
+            loader.setLocation(getClass().getResource("../view/registerBuyer/RegisterBuyerView.fxml"));
 
-        try {
-            Parent root = loader.load();
-            RegisterBuyerController ctrl = loader.getController();
-            ctrl.init();
-            addBuyerScene = new Scene(root);
-            mainStage.setTitle("Register as Buyer");
-            mainStage.setScene(addBuyerScene);
+            try {
+                Parent root = loader.load();
+                RegisterBuyerController ctrl = loader.getController();
+                ctrl.init(viewModelFactory.getRegisterBuyerVM(), this);
+                addBuyerScene = new Scene(root);
 
-        } catch (IOException e) {
-            e.printStackTrace();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
+        mainStage.setTitle("Register as Buyer");
+        mainStage.setScene(addBuyerScene);
+
     }
+
+
 }
