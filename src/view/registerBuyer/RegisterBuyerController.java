@@ -1,5 +1,6 @@
 package view.registerBuyer;
 
+import core.ViewHandler;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
@@ -7,6 +8,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
 public class RegisterBuyerController {
+
+    private RegisterBuyerVM registerBuyerVM;
+    private ViewHandler viewHandler;
+
     @FXML
     private TextField userName;
     @FXML
@@ -20,5 +25,10 @@ public class RegisterBuyerController {
     }
 
     public void cancel(ActionEvent actionEvent) {
+    }
+
+    public void init(RegisterBuyerVM vm, ViewHandler vh) {
+        viewHandler = vh;
+        registerBuyerVM = vm;
     }
 }

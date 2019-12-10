@@ -5,12 +5,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import view.login.LoginController;
+import view.registerBuyer.RegisterBuyerController;
 
 import java.io.IOException;
 
 public class ViewHandler {
 
     private Stage mainStage;
+    private Scene addBuyerScene;
+    private ViewModelFactory viewModelFactory;
 
     public ViewHandler() {
         mainStage = new Stage();
@@ -32,6 +35,23 @@ public class ViewHandler {
             mainStage.setTitle("Log in");
             Scene loginScene = new Scene(root);
             mainStage.setScene(loginScene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public void openAddBuyer() {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../view/registerBuyer/RegisterBuyerView.fxml"));
+
+        try {
+            Parent root = loader.load();
+            RegisterBuyerController ctrl = loader.getController();
+            ctrl.init(viewModelFactory);
+            addBuyerScene = new Scene(root);
+            mainStage.setTitle("Register as Buyer");
+            mainStage.setScene(addBuyerScene);
         } catch (IOException e) {
             e.printStackTrace();
         }
