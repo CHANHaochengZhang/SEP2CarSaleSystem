@@ -1,6 +1,7 @@
 package view.login;
 
 import core.ViewHandler;
+import javafx.beans.property.IntegerProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -18,20 +19,24 @@ public class LoginController {
     @FXML
     private PasswordField password;
 
+    public void init(LoginVM vm, ViewHandler vh) {
+        this.viewHandler = vh;
+
+        accountNumber.textProperty().bindBidirectional(vm.accountProperty());
+        password.textProperty().bindBidirectional(vm.passwordProperty());
+    }
+
     public void openViewCars(ActionEvent actionEvent) {
     }
 
     public void logIn(ActionEvent actionEvent) {
-        System.out.println("account : " + accountNumber.getText());
-        System.out.println("password : " + password.getText());
-        try {
-            String r = accountNumber.getText();
-            int a = Integer.valueOf(r);
-            String p = password.getText();
-            ClientModel cm = new ClientModelManager();
-            System.out.println(cm.logIn(a, p));
-        } catch (NumberFormatException e) {
-            e.printStackTrace();
+        if (!accountNumber.getText().equals("") && !password.getText().equals("")) {
+            System.out.println("account : " + accountNumber.getText());
+            System.out.println("password : " + password.getText());
+
+            vm.logInSuccessfully();
+        } else {
+            System.out.println("no account");
         }
 
     }
@@ -52,7 +57,5 @@ public class LoginController {
     public void openAccountManagement(ActionEvent actionEvent) {
     }
 
-    public void init(LoginVM vm, ViewHandler vh) {
-        this.viewHandler = vh;
-    }
+
 }
