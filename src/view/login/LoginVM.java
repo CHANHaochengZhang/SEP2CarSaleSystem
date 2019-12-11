@@ -16,14 +16,15 @@ public class LoginVM {
     }
 
     public boolean logInSuccessfully() {
-        int a = 0;
+
         try {
             String r = accountNo.getValue();
-            a = Integer.valueOf(r);
+            int a = Integer.valueOf(r);
+            return clientModel.logIn(a, password.getValue());
         } catch (NumberFormatException e) {
             System.out.println("Not int");
         }
-        return clientModel.logIn(a, password.getValue());
+        return false;
     }
 
     public StringProperty accountProperty() {

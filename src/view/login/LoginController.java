@@ -12,7 +12,7 @@ import model.ClientModelManager;
 
 public class LoginController {
     private ViewHandler viewHandler;
-    private LoginVM vm;
+    private LoginVM viewModel;
     @FXML
     private TextField accountNumber;
 
@@ -20,8 +20,8 @@ public class LoginController {
     private PasswordField password;
 
     public void init(LoginVM vm, ViewHandler vh) {
-        this.viewHandler = vh;
-
+        viewHandler = vh;
+        viewModel = vm;
         accountNumber.textProperty().bindBidirectional(vm.accountProperty());
         password.textProperty().bindBidirectional(vm.passwordProperty());
     }
@@ -30,14 +30,23 @@ public class LoginController {
     }
 
     public void logIn(ActionEvent actionEvent) {
-        if (!accountNumber.getText().equals("") && !password.getText().equals("")) {
+        String a = accountNumber.getText();
+        String p = password.getText();
+
+        if ((a != null && p != null)) {
             System.out.println("account : " + accountNumber.getText());
             System.out.println("password : " + password.getText());
 
-            vm.logInSuccessfully();
+            viewModel.logInSuccessfully();
         } else {
-            System.out.println("no account");
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Warning Dialog");
+            alert.setHeaderText("Sorry, Error of login");
+            alert.setContentText("Please enter you account number or password!");
+
+            alert.showAndWait();
         }
+
 
     }
 

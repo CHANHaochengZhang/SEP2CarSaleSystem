@@ -117,7 +117,24 @@ public class ClientModelManager implements ClientModel {
         }
     }
 
+    @Override
+    public void addPropertyChangeListener(PropertyChangeListener listener) {
+        support.addPropertyChangeListener(listener);
+    }
 
+    @Override
+    public void removePropertyChangeListener(String eventName, PropertyChangeListener listener) {
+        if(eventName == null || "".equals(eventName)) {
+            support.removePropertyChangeListener(listener);
+        } else {
+            support.removePropertyChangeListener(eventName, listener);
+        }
+    }
+
+    @Override
+    public void removePropertyChangeListener(PropertyChangeListener listener) {
+        support.removePropertyChangeListener(listener);
+    }
 // get time for message
     private String calcTimeStamp() {
         SimpleDateFormat sdfDate =
