@@ -13,7 +13,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.talking.TalkingController">
    <children>
-      <HBox layoutX="24.0" layoutY="27.0" prefHeight="36.0" prefWidth="308.0">
+      <HBox layoutX="24.0" layoutY="48.0" prefHeight="36.0" prefWidth="308.0">
          <children>
             <Label text="Talk with:">
                <HBox.margin>
@@ -48,5 +48,6 @@
             </Button>
          </children>
       </HBox>
+      <Button layoutX="31.0" layoutY="14.0" mnemonicParsing="false" onAction="#backToMailBox" text="Back" />
    </children>
 </AnchorPane>

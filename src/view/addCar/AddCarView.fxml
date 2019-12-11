@@ -11,7 +11,10 @@
 
 <AnchorPane prefHeight="997.0" prefWidth="674.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.addCar.AddCarController">
    <children>
-      <Button layoutX="412.0" layoutY="940.0" mnemonicParsing="false" onAction="#SaveButton" text="Save" />
+      <Button layoutX="404.0" layoutY="932.0" mnemonicParsing="false" onAction="#SaveButton" text="Save">
+         <font>
+            <Font size="19.0" />
+         </font></Button>
       <Button layoutX="516.0" layoutY="940.0" mnemonicParsing="false" onAction="#CancelButton" text="Cancel" />
       <Label layoutX="127.0" layoutY="83.0" text="Car Name:">
          <font>

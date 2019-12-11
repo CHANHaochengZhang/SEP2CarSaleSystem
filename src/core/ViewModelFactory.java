@@ -1,13 +1,25 @@
 package core;
 
+import view.accountManagement.AccountManagementVM;
+import view.addCar.AddCarVM;
+import view.carDetail.CarDetailVM;
 import view.login.LoginVM;
+import view.mailBox.MailBoxVM;
 import view.registerBuyer.RegisterBuyerVM;
 import view.registerSeller.RegisterSellerVM;
+import view.talking.TalkingVM;
+import view.viewCar.ViewCarVM;
 
 public class ViewModelFactory {
     private LoginVM loginVM;
     private RegisterBuyerVM registerBuyerVM;
     private RegisterSellerVM registerSellerVM;
+    private AccountManagementVM accountManagementVM;
+    private AddCarVM addCarVM;
+    private CarDetailVM carDetailVM;
+    private MailBoxVM mailBoxVM;
+    private TalkingVM talkingVM;
+    private ViewCarVM viewCarVM;
 
     private ModelFactory modelFactory;
 
@@ -16,6 +28,7 @@ public class ViewModelFactory {
         this.modelFactory = modelFactory;
     }
 
+    //lazy inst
     public LoginVM getLoginVM() {
         if (loginVM == null) loginVM = new LoginVM(modelFactory.getClientModel());
         return loginVM;
@@ -31,5 +44,41 @@ public class ViewModelFactory {
         if (registerSellerVM == null)
             registerSellerVM = new RegisterSellerVM(modelFactory.getClientModel());
         return registerSellerVM;
+    }
+
+    public AccountManagementVM getAccountManagementVM() {
+        if (accountManagementVM == null)
+            accountManagementVM = new AccountManagementVM(modelFactory.getClientModel());
+        return accountManagementVM;
+    }
+
+    public AddCarVM getAddCarVM() {
+        if (addCarVM == null)
+            addCarVM = new AddCarVM(modelFactory.getClientModel());
+        return addCarVM;
+    }
+
+    public CarDetailVM getCarDetailVM() {
+        if (carDetailVM == null)
+            carDetailVM = new CarDetailVM(modelFactory.getClientModel());
+        return carDetailVM;
+    }
+
+    //TODO: Mail model
+    public MailBoxVM getMailBoxVM() {
+
+        return null;
+    }
+
+    //TODO: Mail model
+    public TalkingVM getTalkingVM() {
+
+        return null;
+    }
+
+    public ViewCarVM getViewCarVM() {
+        if (viewCarVM == null)
+            viewCarVM = new ViewCarVM(modelFactory.getClientModel());
+        return viewCarVM;
     }
 }

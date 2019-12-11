@@ -9,7 +9,7 @@ import javafx.scene.text.Text;
 
 public class RegisterBuyerController {
 
-    private RegisterBuyerVM registerBuyerVM;
+    private RegisterBuyerVM viewModel;
     private ViewHandler viewHandler;
 
     @FXML
@@ -28,6 +28,7 @@ public class RegisterBuyerController {
     }
 
     public void init(RegisterBuyerVM vm, ViewHandler vh) {
-        this.viewHandler = vh;
+        viewHandler = vh;
+        viewModel = vm;
     }
 }

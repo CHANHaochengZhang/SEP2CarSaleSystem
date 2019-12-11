@@ -33,5 +33,6 @@
       <ComboBox fx:id="priceRange" layoutX="21.0" layoutY="66.0" prefWidth="150.0" promptText="Price" />
       <ComboBox fx:id="mileageRange" layoutX="193.0" layoutY="66.0" prefWidth="150.0" promptText="Mileage" />
       <ComboBox fx:id="carModels" layoutX="361.0" layoutY="66.0" prefWidth="150.0" promptText="Model" />
+      <Button layoutX="21.0" layoutY="14.0" mnemonicParsing="false" onAction="#backToLogin" text="Back" />
    </children>
 </AnchorPane>

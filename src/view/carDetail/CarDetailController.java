@@ -1,10 +1,15 @@
 package view.carDetail;
 
+import core.ViewHandler;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.text.Text;
 
 public class CarDetailController {
+
+    private ViewHandler viewHandler;
+    private CarDetailVM viewModel;
+
     @FXML
     private Text sellerName;
     @FXML
@@ -38,6 +43,15 @@ public class CarDetailController {
     @FXML
     private Text brand;
 
+    public void init(CarDetailVM vm, ViewHandler vh) {
+
+        viewHandler = vh;
+        viewModel = vm;
+    }
+
     public void openTalkingView(ActionEvent actionEvent) {
+    }
+
+    public void backToCarList(ActionEvent actionEvent) {
     }
 }

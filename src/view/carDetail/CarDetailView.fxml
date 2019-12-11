@@ -11,7 +11,7 @@
 
 <AnchorPane prefHeight="887.0" prefWidth="674.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.carDetail.CarDetailController">
    <children>
-      <Button layoutX="522.0" layoutY="33.0" mnemonicParsing="false" onAction="#openTalkingView" text="Talk to seller" />
+      <Button layoutX="552.0" layoutY="14.0" mnemonicParsing="false" onAction="#openTalkingView" text="Talk to seller" />
       <Label layoutX="127.0" layoutY="83.0" prefHeight="36.0" prefWidth="131.0" text="Car Name:">
          <font>
             <Font size="26.0" />
@@ -27,15 +27,7 @@
       <Label layoutX="227.0" layoutY="629.0" text="Maximum load capacity of the car(kg):" />
       <Label layoutX="252.0" layoutY="695.0" text="Top speed of the car(km/h):" />
       <VBox layoutX="220.0" layoutY="495.0" prefHeight="36.0" prefWidth="218.0" />
-      <HBox layoutX="55.0" layoutY="33.0">
-         <children>
-            <Label text="Price:">
-               <HBox.margin>
-                  <Insets right="10.0" top="5.0" />
-               </HBox.margin>
-            </Label>
-         </children>
-      </HBox>
+      <HBox layoutX="55.0" layoutY="33.0" />
       <VBox layoutX="46.0" layoutY="150.0" prefHeight="133.0" prefWidth="214.0">
          <children>
             <Label text="Seller Info:">
@@ -88,7 +80,10 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <Text fx:id="priceOfCar" layoutX="123.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="73.0" />
+      <Text fx:id="priceOfCar" layoutX="111.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="180.0">
+         <font>
+            <Font size="16.0" />
+         </font></Text>
       <Text fx:id="carName" layoutX="282.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " wrappingWidth="344.0">
          <font>
             <Font size="19.0" />
@@ -107,5 +102,7 @@
       <Label layoutX="219.0" layoutY="495.0" prefHeight="15.0" prefWidth="219.0" text="Average fuel consumption of the car:" />
       <Label layoutX="269.0" layoutY="513.0" prefHeight="22.0" prefWidth="165.0" text="(number of litres per 100km)" />
       <Text fx:id="brand" layoutX="478.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " wrappingWidth="147.240234375" />
+      <Button layoutX="19.0" layoutY="14.0" mnemonicParsing="false" onAction="#backToCarList" text="Back" />
+      <Label layoutX="60.0" layoutY="57.0" text="Price:" />
    </children>
 </AnchorPane>

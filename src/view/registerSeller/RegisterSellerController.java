@@ -32,6 +32,11 @@ public class RegisterSellerController {
     @FXML
     private TextField phone;
 
+    public void init(RegisterSellerVM vm, ViewHandler vh) {
+
+        viewHandler = vh;
+        viewModel = vm;
+    }
 
     public void Save(ActionEvent actionEvent) {
     }
@@ -39,9 +44,5 @@ public class RegisterSellerController {
     public void cancel(ActionEvent actionEvent) {
     }
 
-    public void init(RegisterSellerVM vm, ViewHandler vh) {
 
-        viewHandler = vh;
-        viewModel = vm;
-    }
 }
