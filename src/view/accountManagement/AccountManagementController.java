@@ -27,5 +27,6 @@ public class AccountManagementController {
 
     public void openMailBoxView(ActionEvent actionEvent) {
         viewHandler.openMailBox();
+
     }
 }

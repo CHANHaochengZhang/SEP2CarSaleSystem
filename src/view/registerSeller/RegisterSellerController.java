@@ -42,6 +42,7 @@ public class RegisterSellerController {
     }
 
     public void cancel(ActionEvent actionEvent) {
+        viewHandler.closeUser();
     }
 
 

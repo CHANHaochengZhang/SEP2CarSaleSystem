@@ -15,6 +15,7 @@ import view.talking.TalkingController;
 import view.viewCar.ViewCarController;
 
 import java.io.IOException;
+import java.net.PortUnreachableException;
 
 public class ViewHandler {
 
@@ -232,4 +233,9 @@ public class ViewHandler {
         messageStage.setScene(talkingScene);
         messageStage.showAndWait();
     }
+
+    public void closeUser() {
+        addUserStage.close();
+    }
+
 }

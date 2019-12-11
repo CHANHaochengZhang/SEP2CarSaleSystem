@@ -25,6 +25,7 @@ public class RegisterBuyerController {
     }
 
     public void cancel(ActionEvent actionEvent) {
+        viewHandler.closeUser();
     }
 
     public void init(RegisterBuyerVM vm, ViewHandler vh) {
