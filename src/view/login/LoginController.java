@@ -62,6 +62,7 @@ public class LoginController {
     }
 
     public void openAccountManagement(ActionEvent actionEvent) {
+        viewHandler.openAccountManagement();
     }
 
 

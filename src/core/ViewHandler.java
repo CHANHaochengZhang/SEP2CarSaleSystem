@@ -4,6 +4,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import view.accountManagement.AccountManagementController;
 import view.login.LoginController;
 import view.registerBuyer.RegisterBuyerController;
 import view.registerSeller.RegisterSellerController;
@@ -15,10 +16,13 @@ public class ViewHandler {
     private Stage mainStage;
     private Stage addUserStage;
 
-    private Stage productStage;
+    private Stage carStage;
 
     private Scene addBuyerScene;
     private Scene addSellerScene;
+    private Scene accountManage;
+    private Scene carlistScene;
+
     private ViewModelFactory viewModelFactory;
 
     public ViewHandler(Stage stage, ViewModelFactory vmf) {
@@ -86,7 +90,6 @@ public class ViewHandler {
                 ctrl.init(viewModelFactory.getRegisterSellerVM(), this);
                 addSellerScene = new Scene(root);
 
-
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -96,6 +99,30 @@ public class ViewHandler {
         addUserStage.setScene(addSellerScene);
         addUserStage.showAndWait();
     }
+
+    public void openAccountManagement(){
+        FXMLLoader loader = new FXMLLoader();
+        if (accountManage == null) {
+            loader.setLocation(getClass().getResource("../view/accountManagement/AccountManagementView.fxml"));
+
+            try {
+                Parent root = loader.load();
+                AccountManagementController ctrl = loader.getController();
+                ctrl.init(viewModelFactory.getAccountManagementVM(), this);
+                accountManage = new Scene(root);
+
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        addUserStage.setTitle("AccountManage");
+        addUserStage.setScene(accountManage);
+        addUserStage.showAndWait();
+        //IllegalStateException
+    }
+
 
 
 }
