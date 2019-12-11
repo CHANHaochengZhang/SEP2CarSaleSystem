@@ -6,13 +6,19 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import view.login.LoginController;
 import view.registerBuyer.RegisterBuyerController;
+import view.registerSeller.RegisterSellerController;
 
 import java.io.IOException;
 
 public class ViewHandler {
 
     private Stage mainStage;
+    private Stage addUserStage;
+
+    private Stage productStage;
+
     private Scene addBuyerScene;
+    private Scene addSellerScene;
     private ViewModelFactory viewModelFactory;
 
     public ViewHandler(Stage stage, ViewModelFactory vmf) {
@@ -23,6 +29,8 @@ public class ViewHandler {
     public void start() {
         openLogin();
         mainStage.show();
+        addUserStage = new Stage();
+
 
     }
 
@@ -59,9 +67,34 @@ public class ViewHandler {
                 e.printStackTrace();
             }
         }
-        mainStage.setTitle("Register as Buyer");
-        mainStage.setScene(addBuyerScene);
 
+        addUserStage.setTitle("Register as Buyer");
+        addUserStage.setScene(addBuyerScene);
+        addUserStage.showAndWait();
+
+
+    }
+
+    public void openAddSeller() {
+        FXMLLoader loader = new FXMLLoader();
+        if (addSellerScene == null) {
+            loader.setLocation(getClass().getResource("../view/registerSeller/RegisterSellerView.fxml"));
+
+            try {
+                Parent root = loader.load();
+                RegisterSellerController ctrl = loader.getController();
+                ctrl.init(viewModelFactory.getRegisterSellerVM(), this);
+                addSellerScene = new Scene(root);
+
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        addUserStage.setTitle("Register as Seller");
+        addUserStage.setScene(addSellerScene);
+        addUserStage.showAndWait();
     }
 
 

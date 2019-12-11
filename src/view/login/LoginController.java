@@ -11,6 +11,9 @@ import model.ClientModel;
 import model.ClientModelManager;
 
 public class LoginController {
+    //default login is false
+    private Boolean logInSucceed = false;
+
     private ViewHandler viewHandler;
     private LoginVM viewModel;
     @FXML
@@ -37,7 +40,7 @@ public class LoginController {
             System.out.println("account : " + accountNumber.getText());
             System.out.println("password : " + password.getText());
 
-            viewModel.logInSuccessfully();
+           logInSucceed =  viewModel.logInSuccessfully();
         } else {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Warning Dialog");
@@ -55,12 +58,7 @@ public class LoginController {
     }
 
     public void openAddSeller(ActionEvent actionEvent) {
-        Alert alert = new Alert(Alert.AlertType.WARNING);
-        alert.setTitle("Warning Dialog");
-        alert.setHeaderText("Look, a Warning Dialog");
-        alert.setContentText("Careful with the next step!");
-
-        alert.showAndWait();
+       viewHandler.openAddSeller();
     }
 
     public void openAccountManagement(ActionEvent actionEvent) {

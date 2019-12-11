@@ -1,12 +1,18 @@
 package view.registerSeller;
 
+import core.ViewHandler;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import view.registerBuyer.RegisterBuyerVM;
 
 public class RegisterSellerController {
+
+    private ViewHandler viewHandler;
+    private RegisterSellerVM viewModel;
+
     @FXML
     private TextField userName;
     @FXML
@@ -16,7 +22,7 @@ public class RegisterSellerController {
     @FXML
     private PasswordField passwordAgain;
 
-    
+
     @FXML
     private TextField street;
     @FXML
@@ -26,9 +32,16 @@ public class RegisterSellerController {
     @FXML
     private TextField phone;
 
+
     public void Save(ActionEvent actionEvent) {
     }
 
     public void cancel(ActionEvent actionEvent) {
+    }
+
+    public void init(RegisterSellerVM vm, ViewHandler vh) {
+
+        viewHandler = vh;
+        viewModel = vm;
     }
 }
