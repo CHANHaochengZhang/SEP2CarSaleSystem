@@ -50,8 +50,10 @@ public class CarDetailController {
     }
 
     public void openTalkingView(ActionEvent actionEvent) {
+        viewHandler.openTalking();
     }
 
     public void backToCarList(ActionEvent actionEvent) {
+        viewHandler.openAccountManagement();
     }
 }

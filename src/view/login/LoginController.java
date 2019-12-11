@@ -29,8 +29,7 @@ public class LoginController {
         password.textProperty().bindBidirectional(vm.passwordProperty());
     }
 
-    public void openViewCars(ActionEvent actionEvent) {
-    }
+
 
     public void logIn(ActionEvent actionEvent) {
         String a = accountNumber.getText();
@@ -52,7 +51,9 @@ public class LoginController {
 
 
     }
-
+    public void openViewCars(ActionEvent actionEvent) {
+        viewHandler.openCarList();
+    }
     public void openAddBuyer(ActionEvent actionEvent) {
         viewHandler.openAddBuyer();
     }

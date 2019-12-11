@@ -32,5 +32,6 @@ public class TalkingController {
     }
 
     public void backToMailBox(ActionEvent actionEvent) {
+        viewHandler.openMailBox();
     }
 }

@@ -21,8 +21,11 @@ public class AccountManagementController {
         viewModel = vm;
     }
     public void openAddCarView(ActionEvent actionEvent) {
+        viewHandler.openAddCar();
+
     }
 
     public void openMailBoxView(ActionEvent actionEvent) {
+        viewHandler.openMailBox();
     }
 }
