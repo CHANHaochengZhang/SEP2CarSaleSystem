@@ -6,6 +6,8 @@ import model.ClientModel;
 public class LoginVM {
 
     private ClientModel clientModel;
+
+    private Boolean logIn;
     private StringProperty accountNo;
     private StringProperty password;
 
@@ -20,7 +22,15 @@ public class LoginVM {
         try {
             String r = accountNo.getValue();
             int a = Integer.valueOf(r);
-            return clientModel.logIn(a, password.getValue());
+
+            logIn = clientModel.logIn(a, password.getValue());
+
+            if (logIn) {
+                clientModel.setCurrentUser(a);
+            }
+
+            return logIn;
+
         } catch (NumberFormatException e) {
             System.out.println("Not int");
         }

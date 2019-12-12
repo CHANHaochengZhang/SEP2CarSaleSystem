@@ -25,13 +25,18 @@ import java.rmi.RemoteException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+
 /**
  * Class which implements ClientModel and PropertyChangeObserver
  * connect to loginModel,buyerModel,sellerModel,carModel,displayCarModel,mailModel
+ *
  * @author Haocheng
  * @version 4
  */
 public class ClientModelManager implements ClientModel {
+
+    private int currentUserNo = 0;
+
     private LoginModel loginModel;
     private BuyerModel buyerModel;
     private SellerModel sellerModel;
@@ -111,10 +116,21 @@ public class ClientModelManager implements ClientModel {
         return null;
     }
 
+    @Override
+    public void setCurrentUser(int currentUserNo) {
+        System.out.println("current user is " + currentUserNo);
+        this.currentUserNo = currentUserNo;
+    }
+
+    @Override
+    public int getCurrentUser() {
+        return currentUserNo;
+    }
+
 
     @Override
     public void addPropertyChangeListener(String eventName, PropertyChangeListener listener) {
-        if(eventName == null || "".equals(eventName)) {
+        if (eventName == null || "".equals(eventName)) {
             support.addPropertyChangeListener(listener);
         } else {
             support.addPropertyChangeListener(eventName, listener);
@@ -129,7 +145,7 @@ public class ClientModelManager implements ClientModel {
 
     @Override
     public void removePropertyChangeListener(String eventName, PropertyChangeListener listener) {
-        if(eventName == null || "".equals(eventName)) {
+        if (eventName == null || "".equals(eventName)) {
             support.removePropertyChangeListener(listener);
         } else {
             support.removePropertyChangeListener(eventName, listener);
@@ -140,7 +156,8 @@ public class ClientModelManager implements ClientModel {
     public void removePropertyChangeListener(PropertyChangeListener listener) {
         support.removePropertyChangeListener(listener);
     }
-// get time for message
+
+    // get time for message
     private String calcTimeStamp() {
         SimpleDateFormat sdfDate =
                 new SimpleDateFormat("yyyy/MM/dd HH:mm");

@@ -44,4 +44,9 @@ public interface ClientModel extends PropertyChangeObserver {
     ArrayList<Message> getAllMessage();
 
     ArrayList<Message> getMessageByAddresser(int currentNo, int addresserNo);
+
+
+    void setCurrentUser(int currentUserNo);
+
+    int getCurrentUser();
 }
