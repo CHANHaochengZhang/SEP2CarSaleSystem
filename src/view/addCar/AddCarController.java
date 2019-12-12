@@ -42,7 +42,6 @@ public class AddCarController {
 
 
     public void init(AddCarVM vm, ViewHandler vh) {
-
         viewHandler = vh;
         viewModel = vm;
     }

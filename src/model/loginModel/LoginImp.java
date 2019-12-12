@@ -9,6 +9,7 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.HashMap;
+import java.util.Random;
 
 /**
  * Class which implement LoginModel, send account number and password to confirm log in
@@ -18,13 +19,16 @@ import java.util.HashMap;
  */
 public class LoginImp implements LoginModel, Remote {
 
-
+    private HashMap<Integer, String> accountMap;
     private Server server;
 
     public LoginImp() throws RemoteException, NotBoundException {
         UnicastRemoteObject.exportObject(this, 0);
         Registry registry = LocateRegistry.getRegistry("localhost", 1888);
         server = (Server) registry.lookup("CarServer");
+
+        accountMap = new HashMap<>();
+        loopAccountMap();
     }
 
     @Override
@@ -37,15 +41,27 @@ public class LoginImp implements LoginModel, Remote {
         return false;
     }
 
+    @Override
+    public int getNumberForNewUser() {
+        Random r = new Random();
+        int number = r.nextInt(1000) + 1;
+        for (int i : accountMap.keySet()) {
+            if (number == i) {
+                number = r.nextInt(1000) + 1;
+            }
+        }
+
+        return number;
+    }
+
     /**
-     * @param accountNo , password, use accountMap to get both seller and buyers number and password,
-     *                  compare with the accountNo and password which from client
-     * @return boolean is true if log in successfully
+     * loop through the user database as HashMap:accountMap
+     * p.s. I have to say , hash map is way much faster than arrayList
+     *
+     * @author Haocheng
      */
-    public boolean loopThroughUser(int accountNo, String password) throws RemoteException {
 
-        HashMap<Integer, String> accountMap = new HashMap<>();
-
+    public void loopAccountMap() throws RemoteException {
         for (int i = 0; i < server.getBuyer().size(); i++) {
             accountMap.put(server.getBuyer().get(i).getAccountNumber(), server.getBuyer().get(i).getPassword());
         }
@@ -53,6 +69,14 @@ public class LoginImp implements LoginModel, Remote {
             accountMap.put(server.getSeller().get(i).getAccountNumber(), server.getSeller().get(i).getPassword());
         }
         System.out.println(accountMap);
+    }
+
+    /**
+     * @param accountNo , password, use accountMap to get both seller and buyers number and password,
+     *                  compare with the accountNo and password which from client
+     * @return boolean is true if log in successfully
+     */
+    public boolean loopThroughUser(int accountNo, String password) throws RemoteException {
 
         for (int i : accountMap.keySet()) {
 

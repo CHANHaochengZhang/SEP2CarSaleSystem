@@ -1,8 +1,10 @@
 package view.addCar;
 
+import javafx.beans.property.StringProperty;
 import model.ClientModel;
 
 public class AddCarVM {
+
 
     private ClientModel clientModel;
 
