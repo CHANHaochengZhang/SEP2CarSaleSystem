@@ -7,10 +7,16 @@ import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
+/**
+ * Class which implement CarModel,access to server and add new car
+ *
+ * @author Haocheng
+ * @version 4
+ */
 
-public class CarCreate implements CarModel{
+public class CarCreate implements CarModel {
 
-    private Car car;
+
     private Server server;
 
 
@@ -19,9 +25,6 @@ public class CarCreate implements CarModel{
         Registry registry = LocateRegistry.getRegistry("localhost", 1888);
         server = (Server) registry.lookup("CarServer");
     }
-
-
-
 
     @Override
     public void addCar(Car car) {

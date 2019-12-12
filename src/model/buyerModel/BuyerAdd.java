@@ -8,7 +8,12 @@ import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
-
+/**
+ * Class which implement DBAdder, as a adapter , DbAddImp can access the database to add car,buyer,seller,message objects .
+ *
+ * @author Haocheng
+ * @version 4
+ */
 public class BuyerAdd implements BuyerModel{
     private Buyer buyer;
     private Server server;
@@ -19,14 +24,6 @@ public class BuyerAdd implements BuyerModel{
         server = (Server) rg.lookup("CarServer");
     }
 
-
-    public void testServerHello() {
-        try {
-            System.out.println(server.serverHello());
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        }
-    }
 
     @Override
     public void addBuyer(Buyer buyer) {

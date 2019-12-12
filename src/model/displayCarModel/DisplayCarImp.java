@@ -13,7 +13,12 @@ import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 import java.util.HashMap;
-
+/**
+ * Class which implement DisplayCarModel, get the carList form database, with fitter function
+ *
+ * @author Haocheng
+ * @version 4
+ */
 public class DisplayCarImp implements DisplayCarModel {
 
     private Server server;

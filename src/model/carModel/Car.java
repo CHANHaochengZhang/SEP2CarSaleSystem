@@ -5,7 +5,7 @@ import java.io.Serializable;
  *  Class which contains all match information regarding a car.
  *
  *
- * @author wjj的妈妈
+ * @author Haocheng
  * @version 4
  */
 public class Car implements Serializable {
