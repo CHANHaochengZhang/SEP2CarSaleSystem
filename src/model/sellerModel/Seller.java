@@ -5,7 +5,7 @@ import java.io.Serializable;
  *  Class which contains all match information regarding a seller.
  *
  *
- * @author zhc
+ * @author haocheng
  * @version 4
  */
 public class Seller implements Serializable {

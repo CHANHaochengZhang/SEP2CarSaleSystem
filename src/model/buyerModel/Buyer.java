@@ -5,7 +5,7 @@ import java.io.Serializable;
  *  Class which contains all match information regarding a buyer.
  *
  *
- * @author wjj的爸爸
+ * @author haocheng
  * @version 4
  */
 public class Buyer implements Serializable {

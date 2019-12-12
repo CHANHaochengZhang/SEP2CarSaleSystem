@@ -8,7 +8,12 @@ import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
-
+/**
+ * Class which access to server and send new seller object to the database
+ *
+ * @author Haocheng
+ * @version 4
+ */
 public class SellerAdd implements SellerModel {
     private Seller seller;
     private Server server;

@@ -11,7 +11,12 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
-
+/**
+ * Class which implement DBGutter, as a adapter , DbAddImp can access the database to get car,buyer,seller,message objects .
+ *
+ * @author Haocheng
+ * @version 4
+ */
 
 public class DbGetterImp implements DbGetter {
 

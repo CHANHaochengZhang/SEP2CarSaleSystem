@@ -8,7 +8,12 @@ import model.sellerModel.Seller;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
-
+/**
+ * Class which implement DBAdder, as a adapter , DbAddImp can access the database to add car,buyer,seller,message objects .
+ *
+ * @author Haocheng
+ * @version 4
+ */
 public class DbAdderImp implements DbAdder {
 
     @Override

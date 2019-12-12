@@ -7,7 +7,12 @@ import model.mailModel.Message;
 import model.sellerModel.Seller;
 
 import java.util.ArrayList;
-
+/**
+ * Class which is the one of the main model of MVVM(more models for the wishList function etc.)
+ *
+ * @author Haocheng
+ * @version 4
+ */
 public interface ClientModel extends PropertyChangeObserver {
     //test ok
     boolean logIn(int accountNo, String password);

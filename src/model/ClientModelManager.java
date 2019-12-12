@@ -25,7 +25,12 @@ import java.rmi.RemoteException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-
+/**
+ * Class which implements ClientModel and PropertyChangeObserver
+ * connect to loginModel,buyerModel,sellerModel,carModel,displayCarModel,mailModel
+ * @author Haocheng
+ * @version 4
+ */
 public class ClientModelManager implements ClientModel {
     private LoginModel loginModel;
     private BuyerModel buyerModel;

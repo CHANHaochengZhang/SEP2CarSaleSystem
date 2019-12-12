@@ -10,6 +10,12 @@ import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.HashMap;
 
+/**
+ * Class which implement LoginModel, send account number and password to confirm log in
+ *
+ * @author Haocheng
+ * @version 4
+ */
 public class LoginImp implements LoginModel, Remote {
 
 
@@ -31,7 +37,13 @@ public class LoginImp implements LoginModel, Remote {
         return false;
     }
 
+    /**
+     * @param accountNo , password, use accountMap to get both seller and buyers number and password,
+     *                  compare with the accountNo and password which from client
+     * @return boolean is true if log in successfully
+     */
     public boolean loopThroughUser(int accountNo, String password) throws RemoteException {
+
         HashMap<Integer, String> accountMap = new HashMap<>();
 
         for (int i = 0; i < server.getBuyer().size(); i++) {
@@ -41,7 +53,7 @@ public class LoginImp implements LoginModel, Remote {
             accountMap.put(server.getSeller().get(i).getAccountNumber(), server.getSeller().get(i).getPassword());
         }
         System.out.println(accountMap);
-        System.out.println("-----");
+
         for (int i : accountMap.keySet()) {
 
             if (accountNo == i) {

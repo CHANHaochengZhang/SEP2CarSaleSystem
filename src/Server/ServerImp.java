@@ -16,7 +16,12 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * Class which implement Server, using RMI to access and bring method for clients
+ *
+ * @author Haocheng
+ * @version 4
+ */
 public class ServerImp implements Server {
 
     private List<ClientContainer> clients;
