@@ -27,6 +27,7 @@ public class DbGetterImp implements DbGetter {
 
         try {
             Class.forName("org.postgresql.Driver");
+
             //don't forget to change localhost and password
             c = DriverManager
                     .getConnection("jdbc:postgresql://localhost:2333/postgres",
