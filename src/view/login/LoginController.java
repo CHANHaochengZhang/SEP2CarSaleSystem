@@ -1,18 +1,15 @@
 package view.login;
 
 import core.ViewHandler;
-import javafx.beans.property.IntegerProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import model.ClientModel;
-import model.ClientModelManager;
 
 public class LoginController {
     //default login is false
-    public Boolean logInSucceed = false;
+    private Boolean logInSucceed = false;
 
     private ViewHandler viewHandler;
     private LoginVM viewModel;
@@ -44,14 +41,12 @@ public class LoginController {
                 alert.setTitle("Log in successfully");
                 alert.setHeaderText("Log in successfully");
                 alert.setContentText("(>‿◠)✌");
-
                 alert.showAndWait();
             } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Log in failed");
                 alert.setHeaderText("Log in failed");
                 alert.setContentText("check your account number or password");
-
                 alert.showAndWait();
             }
         } else {
@@ -119,5 +114,7 @@ public class LoginController {
         }
     }
 
-
+    public Boolean getLogInSucceed() {
+        return logInSucceed;
+    }
 }

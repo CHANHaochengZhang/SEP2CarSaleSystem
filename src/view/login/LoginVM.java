@@ -22,7 +22,7 @@ public class LoginVM {
         try {
             String r = accountNo.getValue();
             int a = Integer.valueOf(r);
-            clientModel.setCurrentUser(a);
+
             logIn = clientModel.logIn(a, password.getValue());
 
             if (logIn) {
@@ -43,6 +43,10 @@ public class LoginVM {
 
     public StringProperty passwordProperty() {
         return password;
+    }
+
+    public void setCurrent(int a){
+        clientModel.setCurrentUser(a);
     }
 
     public Boolean getLogIn() {

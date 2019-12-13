@@ -8,22 +8,22 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="483.0" prefWidth="576.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.registerSeller.RegisterSellerController">
+<AnchorPane prefHeight="518.0" prefWidth="576.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.registerSeller.RegisterSellerController">
    <children>
       <Label layoutX="168.0" layoutY="237.0" text="Street:" />
-      <Label layoutX="153.0" layoutY="321.0" text="PostalCode:" />
+      <Label layoutX="153.0" layoutY="351.0" text="PostalCode:" />
       <Label layoutX="157.0" layoutY="119.0" text="Password:" />
       <Label layoutX="155.0" layoutY="79.0" text="Username:" />
-      <Label layoutX="142.0" layoutY="359.0" text="Phone Number:" />
+      <Label layoutX="141.0" layoutY="393.0" text="Phone Number:" />
       <Label layoutX="144.0" layoutY="37.0" text="Account Number:" />
-      <Label layoutX="173.0" layoutY="282.0" text="City:" />
+      <Label layoutX="173.0" layoutY="313.0" text="City:" />
       <TextField fx:id="userName" layoutX="288.0" layoutY="75.0" />
       <TextField fx:id="street" layoutX="288.0" layoutY="233.0" />
-      <TextField fx:id="city" layoutX="288.0" layoutY="278.0" />
-      <TextField fx:id="postalCode" layoutX="288.0" layoutY="317.0" />
-      <TextField fx:id="phone" layoutX="288.0" layoutY="355.0" />
-      <Button layoutX="162.0" layoutY="411.0" mnemonicParsing="false" onAction="#Save" text="Save" />
-      <Button layoutX="369.0" layoutY="411.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" />
+      <TextField fx:id="city" layoutX="288.0" layoutY="309.0" />
+      <TextField fx:id="postalCode" layoutX="288.0" layoutY="347.0" />
+      <TextField fx:id="phone" layoutX="288.0" layoutY="389.0" />
+      <Button layoutX="164.0" layoutY="450.0" mnemonicParsing="false" onAction="#Save" text="Save" />
+      <Button layoutX="370.0" layoutY="450.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" />
       <PasswordField fx:id="password" layoutX="288.0" layoutY="115.0" />
       <Text fx:id="accountNumber" layoutX="295.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " wrappingWidth="147.0">
          <font>
@@ -33,6 +33,8 @@
       <Text layoutX="126.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type password again" />
       <PasswordField fx:id="passwordAgain" layoutX="288.0" layoutY="152.0" />
       <Text fx:id="passwordErrorText" fill="#ff1818" layoutX="295.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="147.0" />
-      <Text fx:id="textError" fill="#f23232" layoutX="296.0" layoutY="390.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " wrappingWidth="147.0" />
+      <Text fx:id="textError" fill="#f23232" layoutX="295.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " wrappingWidth="147.0" />
+      <Text layoutX="146.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="StreetNumber" />
+      <TextField fx:id="streetNumber" layoutX="288.0" layoutY="272.0" />
    </children>
 </AnchorPane>
