@@ -8,6 +8,7 @@ import model.sellerModel.Seller;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
+
 /**
  * Class which implement DBAdder, as a adapter , DbAddImp can access the database to add car,buyer,seller,message objects .
  *
@@ -76,13 +77,13 @@ public class DbAdderImp implements DbAdder {
             stmt = c.createStatement();
             String sql = "INSERT INTO \"CarSellSystem\".seller(accountNo,userName,password,streetName,streetNumber,city,postalCode,phoneNo) " +
                     "VALUES( " + seller.getAccountNumber() +
-                    " ,' " + seller.getUsername() +
-                    " ' , '" + seller.getPassword() +
-                    "' , ' " + seller.getStreetName() +
-                    " ' , " + seller.getStreetNumber() +
-                    " , ' " + seller.getCity() +
+                    ",'" + seller.getUsername() +
+                    "','" + seller.getPassword() +
+                    "','" + seller.getStreetName() +
+                    "'," + seller.getStreetNumber() +
+                    " ,'" + seller.getCity() +
                     "'," + seller.getPostalCode() +
-                    "," + seller.getPhoneNo() + " );";
+                    "," + seller.getPhoneNo() + ");";
 
 
             stmt.executeUpdate(sql);
@@ -113,9 +114,9 @@ public class DbAdderImp implements DbAdder {
             stmt = c.createStatement();
             String sql = "INSERT INTO \"CarSellSystem\".buyer(accountNo,userName,password) " +
                     "VALUES( " + buyer.getAccountNumber() +
-                    " ,' " + buyer.getUsername() +
-                    " ' ,'" + buyer.getPassword() +
-                    " ');";
+                    ",'" + buyer.getUsername() +
+                    "','" + buyer.getPassword() +
+                    "');";
 
 
             stmt.executeUpdate(sql);
@@ -144,10 +145,10 @@ public class DbAdderImp implements DbAdder {
 
             stmt = c.createStatement();
             String sql = "INSERT INTO \"CarSellSystem\".message(msg,time,addresser,receiver) " +
-                    "VALUES(' " + message.getText() +
+                    "VALUES('" + message.getText() +
                     " ',' " + message.getDate() +
-                    " ' ," + message.getAddresserNo() +
-                    "," + message.getReceiverNo() + " );";
+                    " '," + message.getAddresserNo() +
+                    "," + message.getReceiverNo() + ");";
 
 
             stmt.executeUpdate(sql);

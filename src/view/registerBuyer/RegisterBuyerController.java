@@ -35,6 +35,8 @@ public class RegisterBuyerController {
     public void save(ActionEvent actionEvent) {
         String p = password.getText();
         String pa = passwordAgain.getText();
+        System.out.println(p+"|");
+        System.out.println(pa+"|");
 
         if (p == null || pa == null) {
             errorText.setText("* please enter your password");

@@ -33,10 +33,11 @@ public class LoginController {
     public void logIn(ActionEvent actionEvent) {
         String a = accountNumber.getText();
         String p = password.getText();
+        System.out.println("account : " + accountNumber.getText());
+        System.out.println("password : " + password.getText());
 
         if ((a != null && p != null)) {
-            System.out.println("account : " + accountNumber.getText());
-            System.out.println("password : " + password.getText());
+
             logInSucceed = viewModel.logInSuccessfully();
             if (logInSucceed) {
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);

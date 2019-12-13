@@ -21,8 +21,9 @@ public class RegisterBuyerVM {
     }
 
     public void addNewBuyer() {
-
-        Buyer buyer = new Buyer(userName.getValue(), password.getValue(), accInt);
+        String name = userName.getValue();
+        String pas = password.getValue();
+        Buyer buyer = new Buyer(name, pas, accInt);
 
         clientModel.addBuyer(buyer);
     }

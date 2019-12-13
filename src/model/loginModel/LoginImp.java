@@ -77,7 +77,7 @@ public class LoginImp implements LoginModel, Remote {
      * @return boolean is true if log in successfully
      */
     public boolean loopThroughUser(int accountNo, String password) throws RemoteException {
-
+        loopAccountMap();
         for (int i : accountMap.keySet()) {
 
             if (accountNo == i) {
