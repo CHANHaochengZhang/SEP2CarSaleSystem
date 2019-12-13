@@ -45,5 +45,7 @@ public class LoginVM {
         return password;
     }
 
-
+    public Boolean getLogIn() {
+        return logIn;
+    }
 }
