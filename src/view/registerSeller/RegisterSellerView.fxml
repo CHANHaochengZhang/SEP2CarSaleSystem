@@ -32,5 +32,7 @@
       </Text>
       <Text layoutX="126.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type password again" />
       <PasswordField fx:id="passwordAgain" layoutX="288.0" layoutY="152.0" />
+      <Text fx:id="passwordErrorText" fill="#ff1818" layoutX="295.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="147.0" />
+      <Text fx:id="textError" fill="#f23232" layoutX="296.0" layoutY="390.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " wrappingWidth="147.0" />
    </children>
 </AnchorPane>

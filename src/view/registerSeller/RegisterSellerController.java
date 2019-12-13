@@ -10,9 +10,14 @@ import view.registerBuyer.RegisterBuyerVM;
 
 public class RegisterSellerController {
 
+
     private ViewHandler viewHandler;
     private RegisterSellerVM viewModel;
 
+    @FXML
+    private Text passwordErrorText;
+    @FXML
+    private Text textError;
     @FXML
     private TextField userName;
     @FXML

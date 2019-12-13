@@ -56,7 +56,7 @@ public class LoginImp implements LoginModel, Remote {
 
     /**
      * loop through the user database as HashMap:accountMap
-     * p.s. I have to say , hash map is way much faster than arrayList
+     * p.s. I have to say , hash map is way much faster than arrayList,BTW
      *
      * @author Haocheng
      */

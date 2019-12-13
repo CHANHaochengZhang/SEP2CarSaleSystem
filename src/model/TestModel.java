@@ -14,7 +14,7 @@ public class TestModel {
 //        System.out.println(cm.getAllCars());
 //        System.out.println(cm.getSellerInfoBycarNumber(999));
 //         System.out.println(cm.filterByWord("bmw"));
-        System.out.println(cm.logIn(888,"HAHAHAHAHAHAHA"));
-
+//        System.out.println(cm.logIn(888,"HAHAHAHAHAHAHA"));
+//        System.out.println(cm.getNumberForNewUsr());
     }
 }

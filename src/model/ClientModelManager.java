@@ -105,12 +105,12 @@ public class ClientModelManager implements ClientModel {
     public void sendMessage(Message message) {
 
     }
-
+    //TODO: mail
     @Override
     public ArrayList<Message> getAllMessage() {
         return null;
     }
-
+    //TODO: mail
     @Override
     public ArrayList<Message> getMessageByAddresser(int currentNo, int addresserNo) {
         return null;
@@ -125,6 +125,11 @@ public class ClientModelManager implements ClientModel {
     @Override
     public int getCurrentUser() {
         return currentUserNo;
+    }
+
+    @Override
+    public int getNumberForNewUsr() {
+        return loginModel.getNumberForNewUser();
     }
 
 

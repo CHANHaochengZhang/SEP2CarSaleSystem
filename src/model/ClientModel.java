@@ -7,6 +7,7 @@ import model.mailModel.Message;
 import model.sellerModel.Seller;
 
 import java.util.ArrayList;
+
 /**
  * Class which is the one of the main model of MVVM(more models for the wishList function etc.)
  *
@@ -45,8 +46,10 @@ public interface ClientModel extends PropertyChangeObserver {
 
     ArrayList<Message> getMessageByAddresser(int currentNo, int addresserNo);
 
-
+    //test ok
     void setCurrentUser(int currentUserNo);
 
     int getCurrentUser();
+    //test ok
+    int getNumberForNewUsr();
 }
