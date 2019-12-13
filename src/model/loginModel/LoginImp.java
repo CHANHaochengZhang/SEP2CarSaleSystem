@@ -18,8 +18,10 @@ import java.util.Random;
  * @version 4
  */
 public class LoginImp implements LoginModel, Remote {
-
+    // HashMap : AccountNumber, Password
     private HashMap<Integer, String> accountMap;
+    //HashMap : AccountNumber , is Buyer or not (Buyer is true)
+    private HashMap<Integer, Boolean> buyerSellerMap;
     private Server server;
 
     public LoginImp() throws RemoteException, NotBoundException {
@@ -55,6 +57,21 @@ public class LoginImp implements LoginModel, Remote {
         return number;
     }
 
+    @Override
+    public boolean isBuyer(int accountNo) {
+        try {
+            buyerOrSeller();
+            for (int i : buyerSellerMap.keySet()) {
+                if (accountNo == i) {
+                    return buyerSellerMap.get(i);
+                }
+            }
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return true;
+    }
+
     /**
      * loop through the user database as HashMap:accountMap
      * p.s. I have to say , hash map is way much faster than arrayList,BTW
@@ -71,6 +88,18 @@ public class LoginImp implements LoginModel, Remote {
         }
         System.out.println(accountMap);
     }
+
+    public void buyerOrSeller() throws RemoteException {
+        buyerSellerMap = new HashMap<>();
+        for (int i = 0; i < server.getBuyer().size(); i++) {
+            buyerSellerMap.put(server.getBuyer().get(i).getAccountNumber(), true);
+        }
+        for (int i = 0; i < server.getSeller().size(); i++) {
+            buyerSellerMap.put(server.getSeller().get(i).getAccountNumber(), false);
+        }
+        System.out.println(buyerSellerMap);
+    }
+
 
     /**
      * @param accountNo , password, use accountMap to get both seller and buyers number and password,

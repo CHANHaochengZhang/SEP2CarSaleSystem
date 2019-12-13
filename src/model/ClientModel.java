@@ -50,6 +50,13 @@ public interface ClientModel extends PropertyChangeObserver {
     void setCurrentUser(int currentUserNo);
 
     int getCurrentUser();
+
     //test ok
     int getNumberForNewUsr();
+
+    boolean isBuyer(int accountNo);
+
+    Buyer getBuyerByID(int accountNo);
+
+    Seller getSellerByID(int accountNo);
 }

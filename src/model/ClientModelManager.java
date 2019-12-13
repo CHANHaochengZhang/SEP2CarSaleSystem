@@ -105,11 +105,13 @@ public class ClientModelManager implements ClientModel {
     public void sendMessage(Message message) {
 
     }
+
     //TODO: mail
     @Override
     public ArrayList<Message> getAllMessage() {
         return null;
     }
+
     //TODO: mail
     @Override
     public ArrayList<Message> getMessageByAddresser(int currentNo, int addresserNo) {
@@ -130,6 +132,21 @@ public class ClientModelManager implements ClientModel {
     @Override
     public int getNumberForNewUsr() {
         return loginModel.getNumberForNewUser();
+    }
+
+    @Override
+    public boolean isBuyer(int accountNo) {
+        return loginModel.isBuyer(accountNo);
+    }
+//TODO:
+    @Override
+    public Buyer getBuyerByID(int accountNo) {
+        return buyerModel.getBuyerByID(accountNo);
+    }
+
+    @Override
+    public Seller getSellerByID(int accountNo) {
+        return sellerModel.getSellerByID(accountNo);
     }
 
 

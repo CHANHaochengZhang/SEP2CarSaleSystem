@@ -14,6 +14,19 @@ public class AccountManagementVM {
         this.clientModel = clientModel;
         accountNo = new SimpleStringProperty();
         userName = new SimpleStringProperty();
+    }
 
+
+    public boolean isBuyer() {
+        int acc = Integer.valueOf(accountNo.getValue());
+        return clientModel.isBuyer(acc);
+    }
+
+
+    public StringProperty accountNoProperty() {
+        return accountNo;
+    }
+    public StringProperty userNameProperty() {
+        return userName;
     }
 }
