@@ -17,6 +17,10 @@ import java.sql.Statement;
  */
 public class DbAdderImp implements DbAdder {
 
+    private String url = "jdbc:postgresql://localhost:2333/postgres";
+    private String user = "postgres";
+    private String password = "2333";
+
     @Override
     public void addCar(Car car) {
         Connection c = null;
@@ -25,8 +29,8 @@ public class DbAdderImp implements DbAdder {
             // setting: file - project structure - library - find your pgSQL .jar
             Class.forName("org.postgresql.Driver");
 
-            c = DriverManager.getConnection("jdbc:postgresql://localhost:2333/postgres",
-                    "postgres", "2333");
+            c = DriverManager.getConnection(url,
+                    user, password);
 
             System.out.println("Car Database open ok");
 
@@ -69,8 +73,8 @@ public class DbAdderImp implements DbAdder {
         try {
             Class.forName("org.postgresql.Driver");
 
-            c = DriverManager.getConnection("jdbc:postgresql://localhost:2333/postgres",
-                    "postgres", "2333");
+            c = DriverManager.getConnection(url,
+                    user, password);
 
             System.out.println("Seller Database open ok");
 
@@ -106,8 +110,8 @@ public class DbAdderImp implements DbAdder {
         try {
             Class.forName("org.postgresql.Driver");
 
-            c = DriverManager.getConnection("jdbc:postgresql://localhost:2333/postgres",
-                    "postgres", "2333");
+            c = DriverManager.getConnection(url,
+                    user, password);
 
             System.out.println("buyer Database open ok");
 
@@ -138,8 +142,8 @@ public class DbAdderImp implements DbAdder {
         try {
             Class.forName("org.postgresql.Driver");
 
-            c = DriverManager.getConnection("jdbc:postgresql://localhost:2333/postgres",
-                    "postgres", "2333");
+            c = DriverManager.getConnection(url,
+                    user, password);
 
             System.out.println("message Database open ok");
 

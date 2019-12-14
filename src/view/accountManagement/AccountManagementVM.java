@@ -1,13 +1,10 @@
 package view.accountManagement;
 
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
-import javafx.beans.value.ObservableStringValue;
+
 import model.ClientModel;
 import model.buyerModel.Buyer;
 import model.sellerModel.Seller;
-import view.login.LoginController;
-import view.login.LoginVM;
+
 
 public class AccountManagementVM {
     private ClientModel clientModel;
@@ -40,12 +37,17 @@ public class AccountManagementVM {
     }
 
     public String getAccountNumber() {
+        System.out.println(accountNumber);
         return accountNumber;
     }
 
-    public String getUserName() {
+    public String getUserName()
+    {
+        System.out.println(userName);
         return userName;
     }
 
-
+    public void current() {
+        System.out.println("Account manage : current user is = " + clientModel.getCurrentUser());
+    }
 }

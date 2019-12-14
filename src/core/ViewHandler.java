@@ -129,8 +129,8 @@ public class ViewHandler {
 
         addUserStage.setTitle("AccountManage");
         addUserStage.setScene(accountManage);
-        addUserStage.showAndWait();
-        //IllegalStateException
+        addUserStage.show();
+
     }
 
     public void openCarList() {

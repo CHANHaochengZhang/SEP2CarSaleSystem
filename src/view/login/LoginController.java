@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import view.accountManagement.AccountManagementVM;
 
 public class LoginController {
     //default login is false
@@ -117,4 +118,5 @@ public class LoginController {
     public Boolean getLogInSucceed() {
         return logInSucceed;
     }
+
 }

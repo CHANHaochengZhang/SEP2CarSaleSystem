@@ -11,6 +11,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+
 /**
  * Class which implement DBGutter, as a adapter , DbAddImp can access the database to get car,buyer,seller,message objects .
  *
@@ -19,7 +20,9 @@ import java.util.ArrayList;
  */
 
 public class DbGetterImp implements DbGetter {
-
+    private String url = "jdbc:postgresql://localhost:2333/postgres";
+    private String user = "postgres";
+    private String password = "2333";
     @Override
     public ArrayList<Car> getCar() {
         Connection c = null;
@@ -30,8 +33,8 @@ public class DbGetterImp implements DbGetter {
 
             //don't forget to change localhost and password
             c = DriverManager
-                    .getConnection("jdbc:postgresql://localhost:2333/postgres",
-                            "postgres", "2333");
+                    .getConnection(url,
+                            user, password);
             c.setAutoCommit(false);
             System.out.println("Opened Car database successfully");
 
@@ -95,11 +98,13 @@ public class DbGetterImp implements DbGetter {
                 cars.add(car);
 
             }
+            c.close();
             return cars;
         } catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
             System.exit(0);
         }
+
         return null;
     }
 
@@ -113,8 +118,8 @@ public class DbGetterImp implements DbGetter {
             Class.forName("org.postgresql.Driver");
             //don't forget to change localhost and password
             c = DriverManager
-                    .getConnection("jdbc:postgresql://localhost:2333/postgres",
-                            "postgres", "2333");
+                    .getConnection(url,
+                            user, password);
             c.setAutoCommit(false);
             System.out.println("Opened Car database successfully");
 
@@ -139,6 +144,7 @@ public class DbGetterImp implements DbGetter {
                 sellers.add(seller);
 
             }
+            c.close();
             return sellers;
 
         } catch (Exception e) {
@@ -157,8 +163,8 @@ public class DbGetterImp implements DbGetter {
             Class.forName("org.postgresql.Driver");
             //don't forget to change localhost and password
             c = DriverManager
-                    .getConnection("jdbc:postgresql://localhost:2333/postgres",
-                            "postgres", "2333");
+                    .getConnection(url,
+                            user, password);
             c.setAutoCommit(false);
             System.out.println("Opened Car database successfully");
 
@@ -181,6 +187,7 @@ public class DbGetterImp implements DbGetter {
 
 
             }
+            c.close();
             return buyers;
 
         } catch (Exception e) {
@@ -199,8 +206,8 @@ public class DbGetterImp implements DbGetter {
             Class.forName("org.postgresql.Driver");
             //don't forget to change localhost and password
             c = DriverManager
-                    .getConnection("jdbc:postgresql://localhost:2333/postgres",
-                            "postgres", "2333");
+                    .getConnection(url,
+                            user, password);
             c.setAutoCommit(false);
             System.out.println("Opened Car database successfully");
 
@@ -223,6 +230,7 @@ public class DbGetterImp implements DbGetter {
 
                 messages.add(msg);
             }
+            c.close();
             return messages;
 
         } catch (Exception e) {

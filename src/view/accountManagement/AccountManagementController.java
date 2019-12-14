@@ -16,8 +16,9 @@ public class AccountManagementController {
     @FXML
     private Text userName;
 
-    public void init(AccountManagementVM vm, ViewHandler vh) {
 
+
+    public void init(AccountManagementVM vm, ViewHandler vh) {
         viewHandler = vh;
         viewModel = vm;
         accountNumber.setText(viewModel.getAccountNumber());
@@ -32,12 +33,14 @@ public class AccountManagementController {
             alert.setHeaderText("Sorry,Can't add your car");
             alert.setContentText("Your are not a seller, please register as seller");
             alert.showAndWait();
+        } else {
+            viewHandler.openAddCar();
         }
-        viewHandler.openAddCar();
-
     }
 
     public void openMailBoxView(ActionEvent actionEvent) {
+        viewModel.current();
         viewHandler.openMailBox();
+        
     }
 }
