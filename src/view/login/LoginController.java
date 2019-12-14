@@ -1,6 +1,8 @@
 package view.login;
 
 import core.ViewHandler;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -23,10 +25,11 @@ public class LoginController {
     public void init(LoginVM vm, ViewHandler vh) {
         viewHandler = vh;
         viewModel = vm;
+
+        vm.numeric(accountNumber);
         accountNumber.textProperty().bindBidirectional(vm.accountProperty());
         password.textProperty().bindBidirectional(vm.passwordProperty());
     }
-
 
     public void logIn(ActionEvent actionEvent) {
         String a = accountNumber.getText();
@@ -118,5 +121,6 @@ public class LoginController {
     public Boolean getLogInSucceed() {
         return logInSucceed;
     }
+
 
 }

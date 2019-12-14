@@ -14,7 +14,7 @@
          <font>
             <Font size="23.0" />
          </font></Button>
-      <Button layoutX="222.0" layoutY="200.0" mnemonicParsing="false" onAction="#openAddCarView" text="Add my car">
+      <Button fx:id="addCarButton" layoutX="222.0" layoutY="200.0" mnemonicParsing="false" onAction="#openAddCarView" text="Add my car">
          <font>
             <Font name="Gadugi Bold" size="23.0" />
          </font></Button>

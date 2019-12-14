@@ -40,12 +40,13 @@ public class ViewHandler {
     public ViewHandler(Stage stage, ViewModelFactory vmf) {
         viewModelFactory = vmf;
         mainStage = stage;
+
     }
 
     public void start() {
         openLogin();
         mainStage.show();
-        addUserStage = new Stage();
+
     }
 
     public void openLogin() {
@@ -81,7 +82,7 @@ public class ViewHandler {
                 e.printStackTrace();
             }
         }
-
+        addUserStage = new Stage();
         addUserStage.setTitle("Register as Buyer");
         addUserStage.setScene(addBuyerScene);
         addUserStage.showAndWait();
@@ -104,7 +105,7 @@ public class ViewHandler {
                 e.printStackTrace();
             }
         }
-
+        addUserStage = new Stage();
         addUserStage.setTitle("Register as Seller");
         addUserStage.setScene(addSellerScene);
         addUserStage.showAndWait();
@@ -112,21 +113,21 @@ public class ViewHandler {
 
     public void openAccountManagement() {
         FXMLLoader loader = new FXMLLoader();
-        if (accountManage == null) {
-            loader.setLocation(getClass().getResource("../view/accountManagement/AccountManagementView.fxml"));
 
-            try {
-                Parent root = loader.load();
-                AccountManagementController ctrl = loader.getController();
-                ctrl.init(viewModelFactory.getAccountManagementVM(), this);
-                accountManage = new Scene(root);
+        loader.setLocation(getClass().getResource("../view/accountManagement/AccountManagementView.fxml"));
+
+        try {
+            Parent root = loader.load();
+            AccountManagementController ctrl = loader.getController();
+            ctrl.init(viewModelFactory.getAccountManagementVM(), this);
+            accountManage = new Scene(root);
 
 
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
+        addUserStage = new Stage();
         addUserStage.setTitle("AccountManage");
         addUserStage.setScene(accountManage);
         addUserStage.show();
@@ -151,20 +152,20 @@ public class ViewHandler {
 
     public void openCarDetail() {
         FXMLLoader loader = new FXMLLoader();
-        if (carDetailScene == null) {
-            loader.setLocation(getClass().getResource("../view/carDetail/CarDetailView.fxml"));
 
-            try {
-                Parent root = loader.load();
-                CarDetailController ctrl = loader.getController();
-                ctrl.init(viewModelFactory.getCarDetailVM(), this);
-                carDetailScene = new Scene(root);
+        loader.setLocation(getClass().getResource("../view/carDetail/CarDetailView.fxml"));
+
+        try {
+            Parent root = loader.load();
+            CarDetailController ctrl = loader.getController();
+            ctrl.init(viewModelFactory.getCarDetailVM(), this);
+            carDetailScene = new Scene(root);
 
 
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+
         carStage = new Stage();
         carStage.setTitle("Car Detail");
         carStage.setScene(carDetailScene);
@@ -194,19 +195,19 @@ public class ViewHandler {
 
     public void openMailBox() {
         FXMLLoader loader = new FXMLLoader();
-        if (mailBoxScene == null) {
-            loader.setLocation(getClass().getResource("../view/mailBox/MailBoxView.fxml"));
 
-            try {
-                Parent root = loader.load();
-                MailBoxController ctrl = loader.getController();
-                ctrl.init(viewModelFactory.getMailBoxVM(), this);
-                mailBoxScene = new Scene(root);
+        loader.setLocation(getClass().getResource("../view/mailBox/MailBoxView.fxml"));
 
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        try {
+            Parent root = loader.load();
+            MailBoxController ctrl = loader.getController();
+            ctrl.init(viewModelFactory.getMailBoxVM(), this);
+            mailBoxScene = new Scene(root);
+
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+
         messageStage = new Stage();
         messageStage.setTitle("MailBox");
         messageStage.setScene(mailBoxScene);
@@ -227,11 +228,11 @@ public class ViewHandler {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            messageStage = new Stage();
+            messageStage.setTitle("MailBox");
+            messageStage.setScene(talkingScene);
+            messageStage.showAndWait();
         }
-        messageStage = new Stage();
-        messageStage.setTitle("MailBox");
-        messageStage.setScene(talkingScene);
-        messageStage.showAndWait();
     }
 
     public void closeUser() {

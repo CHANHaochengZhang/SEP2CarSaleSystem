@@ -11,10 +11,12 @@ import model.carModel.Model;
 
 public class AddCarController {
 
+
     private ViewHandler viewHandler;
     private AddCarVM viewModel;
 
-
+    @FXML
+    private TextField price;
     @FXML
     private TextField carName;
     @FXML

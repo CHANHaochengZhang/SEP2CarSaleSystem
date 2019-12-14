@@ -47,7 +47,6 @@ public class ViewModelFactory {
     }
 
     public AccountManagementVM getAccountManagementVM() {
-        if (accountManagementVM == null)
             accountManagementVM = new AccountManagementVM(modelFactory.getClientModel());
         return accountManagementVM;
     }

@@ -4,9 +4,11 @@ import core.ViewHandler;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 
 public class AccountManagementController {
+
     private ViewHandler viewHandler;
     private AccountManagementVM viewModel;
 
@@ -15,7 +17,8 @@ public class AccountManagementController {
     private Text accountNumber;
     @FXML
     private Text userName;
-
+    @FXML
+    private Button addCarButton;
 
 
     public void init(AccountManagementVM vm, ViewHandler vh) {
@@ -23,11 +26,15 @@ public class AccountManagementController {
         viewModel = vm;
         accountNumber.setText(viewModel.getAccountNumber());
         userName.setText(viewModel.getUserName());
+        if (viewModel.isBuyer()) {
+            addCarButton.setDisable(true);
+        }
     }
 
     public void openAddCarView(ActionEvent actionEvent) {
 
         if (viewModel.isBuyer()) {
+            addCarButton.setDisable(true);
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Can't add car");
             alert.setHeaderText("Sorry,Can't add your car");
@@ -41,6 +48,5 @@ public class AccountManagementController {
     public void openMailBoxView(ActionEvent actionEvent) {
         viewModel.current();
         viewHandler.openMailBox();
-        
     }
 }

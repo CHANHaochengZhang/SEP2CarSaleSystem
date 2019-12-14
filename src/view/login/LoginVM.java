@@ -1,7 +1,14 @@
 package view.login;
 
+
 import javafx.beans.property.*;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+
+import javafx.scene.control.TextField;
 import model.ClientModel;
+
+
 
 public class LoginVM {
 
@@ -45,11 +52,31 @@ public class LoginVM {
         return password;
     }
 
-    public void setCurrent(int a){
+    public void setCurrent(int a) {
         clientModel.setCurrentUser(a);
     }
 
     public Boolean getLogIn() {
         return logIn;
+    }
+//TODO:
+    // force the field to be numeric only
+    // \d+ 匹配一个或多个数字
+    public void numeric(TextField textField) {
+
+        try {
+            textField.textProperty().addListener(new ChangeListener<String>() {
+                @Override
+                public void changed(ObservableValue<? extends String> observable, String oldValue,
+                                    String newValue) {
+                    if (!newValue.matches("\\d*")) {
+                        textField.setText(newValue.replaceAll("[^\\d]", ""));
+                    }
+                }
+            });
+        } catch (Exception e) {
+
+        }
+
     }
 }
