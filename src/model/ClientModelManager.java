@@ -34,6 +34,7 @@ import java.util.Date;
  * @version 4
  */
 public class ClientModelManager implements ClientModel {
+    private Boolean logIn = false ;
 
     private int currentUserNo = 0;
 
@@ -147,6 +148,16 @@ public class ClientModelManager implements ClientModel {
     @Override
     public Seller getSellerByID(int accountNo) {
         return sellerModel.getSellerByID(accountNo);
+    }
+
+    @Override
+    public void setLogInSuccess(Boolean logIn) {
+        this.logIn = logIn;
+    }
+
+    @Override
+    public Boolean getLogInSuccess() {
+        return logIn;
     }
 
 

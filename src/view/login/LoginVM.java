@@ -34,7 +34,8 @@ public class LoginVM {
             if (logIn) {
                 clientModel.setCurrentUser(a);
             }
-
+            // send log in condition to ClientModel
+            clientModel.setLogInSuccess(logIn);
             return logIn;
 
         } catch (NumberFormatException e) {
@@ -51,10 +52,9 @@ public class LoginVM {
         return password;
     }
 
-    public Boolean getLogIn() {
-        return logIn;
+    public Boolean getLogInCondition() {
+        return clientModel.getLogInSuccess();
     }
-
     //TODO:
 
     // force the field to be numeric only

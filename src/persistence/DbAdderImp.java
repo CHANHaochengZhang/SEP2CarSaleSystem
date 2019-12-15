@@ -36,21 +36,21 @@ public class DbAdderImp implements DbAdder {
 
             stmt = c.createStatement();
             String sql = "INSERT INTO \"CarSellSystem\".car(name,brand,model,price,yearOfProduction,maximumCapacityOfCar,averageFuelConsumption,weight,LoadCapacity,topSpeed,typeOfTransmission,mileage,description,sellerNo) " +
-                    "VALUES(' " + car.getName() +
-                    " ',' " + car.getBrand() +
-                    " ',' " + car.getModel() +
-                    " ', " + car.getPrice() +
-                    " , " + car.getYearOfProduction() +
-                    " , " + car.getMaximumCapacityOfCar() +
-                    " ," + car.getAverageFuelConsumption() +
+                    "VALUES('" + car.getName() +
+                    "','" + car.getBrand() +
+                    "','" + car.getModel() +
+                    "'," + car.getPrice() +
+                    "," + car.getYearOfProduction() +
+                    "," + car.getMaximumCapacityOfCar() +
+                    "," + car.getAverageFuelConsumption() +
                     "," + car.getWeight() +
-                    " ," + car.getMaximumCapacityOfCar() +
+                    "," + car.getMaximumCapacityOfCar() +
                     "," + car.getTopSpeed() +
-                    ",' " + car.getTypeOfTransmission() +
-                    " '," + car.getMileAge() +
-                    ",' " + car.getDescription() +
-                    " ' ," + car.getSellerNo() +
-                    " );";
+                    ",'" + car.getTypeOfTransmission() +
+                    "'," + car.getMileAge() +
+                    ",'" + car.getDescription() +
+                    " '," + car.getSellerNo() +
+                    ");";
 
 
             stmt.executeUpdate(sql);

@@ -1,6 +1,9 @@
 package view.viewCar;
 
 import core.ViewHandler;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
@@ -41,12 +44,31 @@ public class ViewCarController {
 
         viewHandler = vh;
         viewModel = vm;
+        searchField.textProperty().bindBidirectional(viewModel.keywordProperty());
+        viewModel.updateTableContent();
+        initTableView();
     }
 
+    private void initTableView() {
+        carName.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getName()));
+        mileAge.setCellValueFactory(cellData -> new SimpleObjectProperty<Integer>(cellData.getValue().getMileAge()));
+        brand.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getBrand()));
+        model.setCellValueFactory(cellData -> new SimpleObjectProperty<Model>(cellData.getValue().getModel()));
+        price.setCellValueFactory(cellData -> new SimpleObjectProperty<Integer>(cellData.getValue().getPrice()));
+
+        carTable.setItems(viewModel.getCars());
+
+    }
+
+
     public void searchKeyWordButton(ActionEvent actionEvent) {
+        carTable.setItems(viewModel.getCars());
+        viewModel.setFilteredData();
     }
 
     public void enterPressed(KeyEvent keyEvent) {
+        carTable.setItems(viewModel.getCars());
+        viewModel.setFilteredData();
     }
 
     public void backToLogin(ActionEvent actionEvent) {

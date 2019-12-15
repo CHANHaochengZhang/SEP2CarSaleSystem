@@ -13,6 +13,7 @@ import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 import java.util.HashMap;
+
 /**
  * Class which implement DisplayCarModel, get the carList form database, with fitter function
  *
@@ -57,11 +58,12 @@ public class DisplayCarImp implements DisplayCarModel {
             }
             for (Car car : cars) {
                 // use toString method to search for keywords. first change it to lower.
+
                 if (car.toString().toLowerCase().contains(keyword.toLowerCase())) {
                     newCars.add(car);
                 }
-                return newCars;
             }
+            return newCars;
         } catch (RemoteException e) {
             e.printStackTrace();
         }

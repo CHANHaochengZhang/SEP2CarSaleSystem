@@ -59,4 +59,8 @@ public interface ClientModel extends PropertyChangeObserver {
     Buyer getBuyerByID(int accountNo);
 
     Seller getSellerByID(int accountNo);
+
+    void setLogInSuccess(Boolean logIn);
+
+    Boolean getLogInSuccess();
 }

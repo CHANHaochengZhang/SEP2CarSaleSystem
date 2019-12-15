@@ -1,10 +1,7 @@
 package view.addCar;
 
-import com.sun.webkit.Timer;
+
 import core.ViewHandler;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -13,7 +10,7 @@ import model.carModel.Model;
 public class AddCarController {
 
 
-    private ObservableList<Model> models = FXCollections.observableArrayList();
+
 
     private ViewHandler viewHandler;
     private AddCarVM viewModel;

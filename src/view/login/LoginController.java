@@ -72,7 +72,7 @@ public class LoginController {
     }
 
     public void openAddBuyer(ActionEvent actionEvent) {
-        if (!logInSucceed) {
+        if (!viewModel.getLogInCondition()) {
             try {
                 viewHandler.openAddBuyer();
             } catch (IllegalStateException e) {
@@ -89,7 +89,7 @@ public class LoginController {
     }
 
     public void openAddSeller(ActionEvent actionEvent) {
-        if (!logInSucceed) {
+        if (!viewModel.getLogInCondition()) {
             try {
                 viewHandler.openAddSeller();
             } catch (IllegalStateException e) {
@@ -106,7 +106,7 @@ public class LoginController {
     }
 
     public void openAccountManagement(ActionEvent actionEvent) {
-        if (logInSucceed) {
+        if (viewModel.getLogInCondition()) {
             viewHandler.openAccountManagement();
         } else {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -117,10 +117,4 @@ public class LoginController {
             alert.showAndWait();
         }
     }
-
-    public Boolean getLogInSucceed() {
-        return logInSucceed;
-    }
-
-
 }
