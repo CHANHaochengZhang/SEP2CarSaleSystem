@@ -9,7 +9,6 @@ import javafx.scene.control.TextField;
 import model.ClientModel;
 
 
-
 public class LoginVM {
 
     private ClientModel clientModel;
@@ -52,31 +51,26 @@ public class LoginVM {
         return password;
     }
 
-    public void setCurrent(int a) {
-        clientModel.setCurrentUser(a);
-    }
-
     public Boolean getLogIn() {
         return logIn;
     }
-//TODO:
+
+    //TODO:
+
     // force the field to be numeric only
     // \d+ 匹配一个或多个数字
     public void numeric(TextField textField) {
 
-        try {
-            textField.textProperty().addListener(new ChangeListener<String>() {
-                @Override
-                public void changed(ObservableValue<? extends String> observable, String oldValue,
-                                    String newValue) {
-                    if (!newValue.matches("\\d*")) {
-                        textField.setText(newValue.replaceAll("[^\\d]", ""));
-                    }
+
+        textField.textProperty().addListener((observable, oldValue, newValue) -> {
+            try {
+                if (!newValue.matches("\\d*")) {
+                    textField.setText(newValue.replaceAll("[^\\d]", ""));
                 }
-            });
-        } catch (Exception e) {
-
-        }
-
+            } catch (Exception e) {
+            }
+        });
     }
+
+
 }

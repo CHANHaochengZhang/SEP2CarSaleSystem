@@ -68,6 +68,7 @@ public class ViewHandler {
 
     public void openAddBuyer() {
         FXMLLoader loader = new FXMLLoader();
+        // lazy Instantiation
         if (addBuyerScene == null) {
             loader.setLocation(getClass().getResource("../view/registerBuyer/RegisterBuyerView.fxml"));
 
@@ -237,6 +238,9 @@ public class ViewHandler {
 
     public void closeUser() {
         addUserStage.close();
+    }
+    public void closeCar(){
+        carStage.close();
     }
 
 }
