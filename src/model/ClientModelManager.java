@@ -35,7 +35,7 @@ import java.util.Date;
  */
 public class ClientModelManager implements ClientModel {
     private Boolean logIn = false ;
-
+    private Car clickedCar;
     private int currentUserNo = 0;
 
     private LoginModel loginModel;
@@ -158,6 +158,16 @@ public class ClientModelManager implements ClientModel {
     @Override
     public Boolean getLogInSuccess() {
         return logIn;
+    }
+
+    @Override
+    public void setClickedCar(Car car) {
+        clickedCar = car;
+    }
+
+    @Override
+    public Car getClickedCar() {
+        return clickedCar;
     }
 
 

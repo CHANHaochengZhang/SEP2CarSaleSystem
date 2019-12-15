@@ -63,4 +63,8 @@ public interface ClientModel extends PropertyChangeObserver {
     void setLogInSuccess(Boolean logIn);
 
     Boolean getLogInSuccess();
+
+    void setClickedCar(Car car);
+
+    Car getClickedCar();
 }

@@ -52,4 +52,10 @@ public class ViewCarVM {
     public StringProperty keywordProperty() {
         return keyword;
     }
+
+    public void setCar(Car car) {
+        clientModel.setClickedCar(car);
+    }
+
+
 }

@@ -153,7 +153,6 @@ public class ViewHandler {
 
     public void openCarDetail() {
         FXMLLoader loader = new FXMLLoader();
-
         loader.setLocation(getClass().getResource("../view/carDetail/CarDetailView.fxml"));
 
         try {
@@ -239,7 +238,8 @@ public class ViewHandler {
     public void closeUser() {
         addUserStage.close();
     }
-    public void closeCar(){
+
+    public void closeCar() {
         carStage.close();
     }
 

@@ -46,6 +46,20 @@ public class ViewCarController {
         viewModel = vm;
         searchField.textProperty().bindBidirectional(viewModel.keywordProperty());
         viewModel.updateTableContent();
+
+        // double click to get car's detail
+        carTable.setOnMousePressed(e -> {
+            // if mouse hover and double clicked
+            if (e.isPrimaryButtonDown() && e.getClickCount() == 2) {
+                if (carTable.getSelectionModel().getSelectedItem() != null) {
+                    Car car = carTable.getSelectionModel().getSelectedItem();
+                    System.out.println("Client wants to see : " + car);
+                    viewModel.setCar(car);
+                    viewHandler.openCarDetail();
+                }
+            }
+        });
+
         initTableView();
     }
 
