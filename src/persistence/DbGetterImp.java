@@ -20,6 +20,7 @@ import java.util.ArrayList;
  */
 
 public class DbGetterImp implements DbGetter {
+    //don't forget to change localhost and password
     private String url = "jdbc:postgresql://localhost:2333/postgres";
     private String user = "postgres";
     private String password = "2333";
@@ -31,7 +32,7 @@ public class DbGetterImp implements DbGetter {
         try {
             Class.forName("org.postgresql.Driver");
 
-            //don't forget to change localhost and password
+
             c = DriverManager
                     .getConnection(url,
                             user, password);
@@ -61,7 +62,6 @@ public class DbGetterImp implements DbGetter {
                 int mileage = rs.getInt("mileage");
                 int sellerNo = rs.getInt("sellerNo");
 
-//                Model mEnum = Model.valueOf(model);
 
 
                 Model mEnum;
@@ -116,7 +116,6 @@ public class DbGetterImp implements DbGetter {
 
         try {
             Class.forName("org.postgresql.Driver");
-            //don't forget to change localhost and password
             c = DriverManager
                     .getConnection(url,
                             user, password);
@@ -161,7 +160,6 @@ public class DbGetterImp implements DbGetter {
 
         try {
             Class.forName("org.postgresql.Driver");
-            //don't forget to change localhost and password
             c = DriverManager
                     .getConnection(url,
                             user, password);
@@ -204,7 +202,6 @@ public class DbGetterImp implements DbGetter {
 
         try {
             Class.forName("org.postgresql.Driver");
-            //don't forget to change localhost and password
             c = DriverManager
                     .getConnection(url,
                             user, password);

@@ -16,7 +16,7 @@ import java.sql.Statement;
  * @version 4
  */
 public class DbAdderImp implements DbAdder {
-
+    // setting: file - project structure - library - find your pgSQL .jar
     private String url = "jdbc:postgresql://localhost:2333/postgres";
     private String user = "postgres";
     private String password = "2333";
@@ -26,7 +26,7 @@ public class DbAdderImp implements DbAdder {
         Connection c = null;
         Statement stmt = null;
         try {
-            // setting: file - project structure - library - find your pgSQL .jar
+
             Class.forName("org.postgresql.Driver");
 
             c = DriverManager.getConnection(url,
