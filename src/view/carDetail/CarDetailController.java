@@ -12,6 +12,9 @@ public class CarDetailController {
     private ViewHandler viewHandler;
     private CarDetailVM viewModel;
 
+    private Car car;
+    private Seller seller;
+
     @FXML
     private Text sellerName;
     @FXML
@@ -50,16 +53,16 @@ public class CarDetailController {
         viewHandler = vh;
         viewModel = vm;
 
+        sellerName.setText("");
+
+        car = viewModel.getCar();
+        seller = viewModel.getCarOwner();
 
         setText();
-
     }
 
 
     private void setText() {
-        Car car = viewModel.getCar();
-        Seller seller = viewModel.getCarOwner();
-
         String ph = String.valueOf(seller.getPhoneNo());
         String pr = String.valueOf(car.getPrice());
         String yop = String.valueOf(car.getYearOfProduction());
@@ -73,7 +76,7 @@ public class CarDetailController {
 
         sellerName.setText(seller.getUsername());
         sellerPhone.setText(ph);
-        sellerAddress.setText(seller.getStreetName() + seller.getCity());
+        sellerAddress.setText(seller.getStreetName() + " " + seller.getCity());
         priceOfCar.setText(pr);
         carName.setText(car.getName());
         yearOfProduction.setText(yop);
@@ -96,6 +99,6 @@ public class CarDetailController {
     }
 
     public void backToCarList(ActionEvent actionEvent) {
-        viewHandler.openAccountManagement();
+        viewHandler.closeCar();
     }
 }

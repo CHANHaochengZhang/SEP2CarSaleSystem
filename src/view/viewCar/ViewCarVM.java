@@ -13,14 +13,13 @@ public class ViewCarVM {
     private ClientModel clientModel;
     private StringProperty keyword;
 
-    private ObservableList<Car> cars = FXCollections.observableArrayList();
-    private ObservableList<Car> keywordCars = FXCollections.observableArrayList();
+    private int lowerPrice, upperPrice, lowerMile, upperMile;
 
+    private ObservableList<Car> cars = FXCollections.observableArrayList();
 
     public ViewCarVM(ClientModel clientModel) {
         this.clientModel = clientModel;
         keyword = new SimpleStringProperty();
-
 
     }
 
@@ -37,17 +36,11 @@ public class ViewCarVM {
         cars.addAll(clientModel.filterByWord(keyword.getValue()));
     }
 
+
     public ObservableList<Car> getCars() {
         return cars;
     }
 
-    public ObservableList<Car> getKeywordCars() {
-        return keywordCars;
-    }
-
-    public String getKeyword() {
-        return keyword.get();
-    }
 
     public StringProperty keywordProperty() {
         return keyword;
@@ -57,5 +50,17 @@ public class ViewCarVM {
         clientModel.setClickedCar(car);
     }
 
+    public void setPriceRange(int lowerPrice, int upperPrice) {
+        this.lowerPrice = lowerPrice;
+        this.upperPrice = upperPrice;
+    }
 
+    public void setMileAgeRange(int lowerMile, int upperMile) {
+        this.lowerMile = lowerMile;
+        this.upperMile = upperMile;
+    }
+    public void rangeFilter(){
+        cars.clear();
+        cars.addAll(clientModel.filter(lowerPrice,upperPrice,lowerMile,upperMile));
+    }
 }

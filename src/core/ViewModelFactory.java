@@ -58,8 +58,8 @@ public class ViewModelFactory {
     }
 
     public CarDetailVM getCarDetailVM() {
-        if (carDetailVM == null)
-            carDetailVM = new CarDetailVM(modelFactory.getClientModel());
+
+        carDetailVM = new CarDetailVM(modelFactory.getClientModel());
         return carDetailVM;
     }
 

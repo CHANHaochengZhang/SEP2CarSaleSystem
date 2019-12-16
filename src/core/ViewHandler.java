@@ -169,7 +169,7 @@ public class ViewHandler {
         carStage = new Stage();
         carStage.setTitle("Car Detail");
         carStage.setScene(carDetailScene);
-        carStage.showAndWait();
+        carStage.show();
     }
 
     public void openAddCar() {
@@ -216,18 +216,17 @@ public class ViewHandler {
 
     public void openTalking() {
         FXMLLoader loader = new FXMLLoader();
-        if (talkingScene == null) {
-            loader.setLocation(getClass().getResource("../view/mailBox/MailBoxView.fxml"));
+        loader.setLocation(getClass().getResource("../view/mailBox/MailBoxView.fxml"));
 
-            try {
-                Parent root = loader.load();
-                TalkingController ctrl = loader.getController();
-                ctrl.init(viewModelFactory.getTalkingVM(), this);
-                talkingScene = new Scene(root);
+        try {
+            Parent root = loader.load();
+            TalkingController ctrl = loader.getController();
+            ctrl.init(viewModelFactory.getTalkingVM(), this);
+            talkingScene = new Scene(root);
 
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        } catch (IOException e) {
+            e.printStackTrace();
+
             messageStage = new Stage();
             messageStage.setTitle("MailBox");
             messageStage.setScene(talkingScene);

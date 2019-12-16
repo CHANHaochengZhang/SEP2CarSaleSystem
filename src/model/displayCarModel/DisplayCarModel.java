@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public interface DisplayCarModel {
 
-    ArrayList<Car> filter(String brand, int mileage, int price, Model model);
+    ArrayList<Car> filter(int lowerPrice,int upperPrice,int lowerMile,int upperMile);
 
     ArrayList<Car> filterByWord(String keyword);
 

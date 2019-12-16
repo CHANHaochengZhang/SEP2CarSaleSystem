@@ -87,8 +87,8 @@ public class ClientModelManager implements ClientModel {
     }
 
     @Override
-    public ArrayList<Car> filter(String brand, int mileage, int price, Model model) {
-        return displayCarModel.filter(brand, mileage, price, model);
+    public ArrayList<Car> filter(int lowerPrice,int upperPrice,int lowerMile,int upperMile) {
+        return displayCarModel.filter(lowerPrice, upperPrice, lowerMile, upperMile);
     }
 
     @Override

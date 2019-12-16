@@ -8,6 +8,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="486.0" prefWidth="1021.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.viewCar.ViewCarController">
    <children>
@@ -27,12 +28,12 @@
                   <Insets right="5.0" />
                </HBox.margin>
             </TextField>
-            <Button mnemonicParsing="false" onAction="#searchKeyWordButton" onKeyPressed="#enterPressed" prefHeight="23.0" prefWidth="79.0" text="Search" />
+            <Button mnemonicParsing="false" onAction="#searchKeyWordButton"  prefHeight="23.0" prefWidth="79.0" text="Search" />
          </children>
       </HBox>
-      <ComboBox fx:id="priceRange" layoutX="21.0" layoutY="66.0" prefWidth="150.0" promptText="Price" />
-      <ComboBox fx:id="mileageRange" layoutX="193.0" layoutY="66.0" prefWidth="150.0" promptText="Mileage" />
-      <ComboBox fx:id="carModels" layoutX="361.0" layoutY="66.0" prefWidth="150.0" promptText="Model" />
+      <ComboBox fx:id="priceRange" layoutX="21.0" layoutY="66.0" onAction="#getPriceRange" prefWidth="150.0" promptText="Price range (DKK)" />
+      <ComboBox fx:id="mileageRange" layoutX="193.0" layoutY="66.0" onAction="#getMileRange" prefWidth="150.0" promptText="Mileage" />
       <Button layoutX="21.0" layoutY="14.0" mnemonicParsing="false" onAction="#backToLogin" text="Back" />
+      <Text fill="#7c7979" layoutX="719.0" layoutY="477.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* double click the item to get more information" />
    </children>
 </AnchorPane>

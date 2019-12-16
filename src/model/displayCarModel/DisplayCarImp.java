@@ -31,9 +31,9 @@ public class DisplayCarImp implements DisplayCarModel {
     }
 
     @Override
-    public ArrayList<Car> filter(String brand, int mileage, int price, Model model) {
+    public ArrayList<Car> filter(int lowerPrice, int upperPrice, int lowerMile, int upperMile) {
         try {
-            return getFilter(brand, mileage, price, model);
+            return getFilter(lowerPrice, lowerPrice, lowerPrice, lowerPrice);
         } catch (RemoteException e) {
             e.printStackTrace();
         }
@@ -101,15 +101,37 @@ public class DisplayCarImp implements DisplayCarModel {
         return null;
     }
 
-    //TODO:for filter
-    public ArrayList<Car> getFilter(String brand, int mileage, int price, Model model) throws RemoteException {
-        if (brand == null && mileage == 0 && price == 0 && model == null) {
-            return server.getCar();
-        }
-        return server.getCar();
+// filter by price range and mileage range
+    public ArrayList<Car> getFilter(int lowerPrice, int upperPrice, int lowerMile, int upperMile) throws RemoteException {
+        ArrayList<Car> cars = server.getCar();
+        ArrayList<Car> newCars = new ArrayList<>();
+        if (upperPrice != 0 && upperMile != 0) {
+            for (Car car : cars) {
+                if (car.getPrice() > lowerPrice && car.getPrice() < upperPrice &&car.getMileAge() > lowerMile && car.getMileAge() < upperMile) {
+                    newCars.add(car);
+                }
+            }
+            return newCars;
+        } else if (upperPrice != 0 && upperMile == 0) {
+            for (Car car : cars) {
+                if (car.getPrice() > lowerPrice && car.getPrice() < upperPrice) {
+                    newCars.add(car);
+                    System.out.println("upperMile == 0 ");
+                }
+            }
+            return newCars;
+        } else if (upperPrice == 0 && upperMile != 0) {
+            for (Car car : cars) {
+                if (car.getMileAge() > lowerMile && car.getMileAge() < upperMile) {
+                    newCars.add(car);
+                }
+            }
+            return newCars;
+        } else
+            return cars;
     }
 
-    //for getCarBuOwnerId
+    //for getCarByOwnerId
     public Car getCarById(int sellerAccountNo) throws RemoteException {
         ArrayList<Car> cars = server.getCar();
 

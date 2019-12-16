@@ -30,14 +30,14 @@ public interface ClientModel extends PropertyChangeObserver {
     //test ok
     ArrayList<Car> filterByWord(String keyword);
 
-    //TODO: filter is just get all cars
-    ArrayList<Car> filter(String brand, int mileage, int price, Model model);
+    //test ok
+    ArrayList<Car> filter(int lowerPrice,int upperPrice,int lowerMile,int upperMile);
 
     //test ok
     ArrayList<Car> getAllCars();
     //test ok
 
-    // insert sellerNo to get car/cars
+    // insert sellerNo to get car/cars //test ok
     Seller getSellerInfoBycarNumber(int carAccountNo);
 
     void sendMessage(Message message);
@@ -53,18 +53,18 @@ public interface ClientModel extends PropertyChangeObserver {
 
     //test ok
     int getNumberForNewUsr();
-
+    //test ok
     boolean isBuyer(int accountNo);
-
+    //test ok
     Buyer getBuyerByID(int accountNo);
-
+    //test ok
     Seller getSellerByID(int accountNo);
-
+    //test ok
     void setLogInSuccess(Boolean logIn);
-
+    //test ok
     Boolean getLogInSuccess();
-
+    //test ok
     void setClickedCar(Car car);
-
+    //test ok
     Car getClickedCar();
 }
