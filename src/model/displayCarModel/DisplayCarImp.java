@@ -33,7 +33,7 @@ public class DisplayCarImp implements DisplayCarModel {
     @Override
     public ArrayList<Car> filter(int lowerPrice, int upperPrice, int lowerMile, int upperMile) {
         try {
-            return getFilter(lowerPrice, lowerPrice, lowerPrice, lowerPrice);
+            return getFilter(lowerPrice, upperPrice, lowerMile, upperMile);
         } catch (RemoteException e) {
             e.printStackTrace();
         }
@@ -103,9 +103,11 @@ public class DisplayCarImp implements DisplayCarModel {
 
 // filter by price range and mileage range
     public ArrayList<Car> getFilter(int lowerPrice, int upperPrice, int lowerMile, int upperMile) throws RemoteException {
+        System.out.println("lp "+lowerPrice +"up "+upperPrice + "lm " + lowerMile + "up" +upperMile);
         ArrayList<Car> cars = server.getCar();
         ArrayList<Car> newCars = new ArrayList<>();
         if (upperPrice != 0 && upperMile != 0) {
+            System.out.println("all range ");
             for (Car car : cars) {
                 if (car.getPrice() > lowerPrice && car.getPrice() < upperPrice &&car.getMileAge() > lowerMile && car.getMileAge() < upperMile) {
                     newCars.add(car);
@@ -113,14 +115,16 @@ public class DisplayCarImp implements DisplayCarModel {
             }
             return newCars;
         } else if (upperPrice != 0 && upperMile == 0) {
+            System.out.println("upperMile == 0 ");
             for (Car car : cars) {
                 if (car.getPrice() > lowerPrice && car.getPrice() < upperPrice) {
                     newCars.add(car);
-                    System.out.println("upperMile == 0 ");
+
                 }
             }
             return newCars;
         } else if (upperPrice == 0 && upperMile != 0) {
+            System.out.println("price == 0");
             for (Car car : cars) {
                 if (car.getMileAge() > lowerMile && car.getMileAge() < upperMile) {
                     newCars.add(car);
@@ -128,6 +132,7 @@ public class DisplayCarImp implements DisplayCarModel {
             }
             return newCars;
         } else
+            System.out.println("nmsl");
             return cars;
     }
 

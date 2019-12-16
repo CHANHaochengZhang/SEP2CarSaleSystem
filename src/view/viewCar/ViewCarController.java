@@ -15,8 +15,6 @@ import model.carModel.Model;
 
 public class ViewCarController {
 
-    private int lowerPrice, upperPrice, lowerMile, upperMile;
-
     private ViewHandler viewHandler;
     private ViewCarVM viewModel;
 
@@ -78,7 +76,8 @@ public class ViewCarController {
 
 
     public void searchKeyWordButton(ActionEvent actionEvent) {
-        viewModel.setFilteredData(); carTable.setItems(viewModel.getCars());
+        viewModel.setFilteredData();
+        carTable.setItems(viewModel.getCars());
 
     }
 
@@ -113,6 +112,8 @@ public class ViewCarController {
             viewModel.setMileAgeRange(1000, 10000);
         } else if (mileageRange.getValue().equals("10,000-50,000 km")) {
             viewModel.setMileAgeRange(10000, 50000);
+        } else if (mileageRange.getValue().equals("50,000-100,000 km")) {
+            viewModel.setMileAgeRange(500000, 100000);
         } else if (mileageRange.getValue().equals("over 100,000 km")) {
             viewModel.setMileAgeRange(100000, 2147483646);
         } else
