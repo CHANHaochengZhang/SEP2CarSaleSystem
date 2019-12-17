@@ -63,12 +63,13 @@ public class LoginVM {
 
 
         textField.textProperty().addListener((observable, oldValue, newValue) -> {
-            try {
+
+            if (newValue != null) {
                 if (!newValue.matches("\\d*")) {
                     textField.setText(newValue.replaceAll("[^\\d]", ""));
                 }
-            } catch (Exception e) {
             }
+
         });
     }
 

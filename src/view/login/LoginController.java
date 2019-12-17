@@ -11,8 +11,6 @@ import javafx.scene.control.TextField;
 import view.accountManagement.AccountManagementVM;
 
 public class LoginController {
-    //default login is false
-    private Boolean logInSucceed = false;
 
     private ViewHandler viewHandler;
     private LoginVM viewModel;
@@ -39,7 +37,8 @@ public class LoginController {
 
         if ((a != null && p != null)) {
 
-            logInSucceed = viewModel.logInSuccessfully();
+            //default login is false
+            boolean logInSucceed = viewModel.logInSuccessfully();
             if (logInSucceed) {
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Log in successfully");

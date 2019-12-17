@@ -73,17 +73,17 @@ public class AddCarVM {
     }
 
     // force the field to be numeric only
-    // \d+ 匹配一个或多个数字
-    public void numeric(TextField textField) {
+    private void numeric(TextField textField) {
 
 
         textField.textProperty().addListener((observable, oldValue, newValue) -> {
-            try {
+
+            if (newValue != null) {
                 if (!newValue.matches("\\d*")) {
                     textField.setText(newValue.replaceAll("[^\\d]", ""));
                 }
-            } catch (Exception e) {
             }
+
         });
     }
 
