@@ -6,7 +6,7 @@ import model.buyerModel.Buyer;
 
 public class RegisterBuyerVM {
     private int accInt;
-    private StringProperty userName, password;
+
     private ClientModel clientModel;
 
     public RegisterBuyerVM(ClientModel clientModel) {
@@ -20,11 +20,14 @@ public class RegisterBuyerVM {
 
     }
 
-    public void addNewBuyer() {
+    // RegisterBuyerVM
+    private StringProperty userName, password;
+    // Initialized StringProperty in the constructor
+    void addNewBuyer() {
         String name = userName.getValue();
         String pas = password.getValue();
         Buyer buyer = new Buyer(name, pas, accInt);
-
+        // call method from ClientModel
         clientModel.addBuyer(buyer);
     }
 

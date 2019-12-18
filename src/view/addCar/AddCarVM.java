@@ -1,9 +1,6 @@
 package view.addCar;
 
 import javafx.beans.property.*;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.scene.control.ListCell;
 import javafx.scene.control.TextField;
 import model.ClientModel;
 import model.carModel.Car;
@@ -13,8 +10,6 @@ public class AddCarVM {
 
     private Model model;
     private StringProperty price, carName, yearOfProduction, mileage, brand, transmission, maxCapacity, fuelConsumption, weight, maxLoadCapacity, topSpeed, description;
-    //    private Property<ListCell<Model>> carModel;
-//    private IntegerProperty p;
     private ClientModel clientModel;
 
     public AddCarVM(ClientModel clientModel) {
@@ -73,7 +68,7 @@ public class AddCarVM {
     }
 
     // force the field to be numeric only
-    private void numeric(TextField textField) {
+      void numeric(TextField textField) {
 
 
         textField.textProperty().addListener((observable, oldValue, newValue) -> {
