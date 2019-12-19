@@ -7,7 +7,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
-import view.registerBuyer.RegisterBuyerVM;
 
 public class RegisterSellerController {
 

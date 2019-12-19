@@ -2,17 +2,13 @@ package model.displayCarModel;
 
 import Server.Server;
 import model.carModel.Car;
-import model.carModel.Model;
 import model.sellerModel.Seller;
 
 import java.rmi.NotBoundException;
-import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
-import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * Class which implement DisplayCarModel, get the carList form database, with fitter function

@@ -65,14 +65,14 @@ public class ViewModelFactory {
 
     //TODO: Mail model
     public MailBoxVM getMailBoxVM() {
-
-        return null;
+        mailBoxVM = new MailBoxVM(modelFactory.getIMailBox());
+        return mailBoxVM;
     }
 
     //TODO: Mail model
-    public TalkingVM getTalkingVM() {
-
-        return null;
+    public TalkingVM getTalkingVM(int accountNo) {
+        talkingVM = new TalkingVM(accountNo, modelFactory.getIMailBox());
+        return talkingVM;
     }
 
     public ViewCarVM getViewCarVM() {

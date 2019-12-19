@@ -38,13 +38,16 @@ public class ServerImp implements Server {
 
         clients = new ArrayList<>();
 
-
     }
 
 
     @Override
     public ArrayList<Message> getMessage() {
         return dbGetter.getMessage();
+    }
+
+    public void addMessage(Message message) {
+        dbAdder.addMessage(message);
     }
 
     @Override
@@ -96,17 +99,7 @@ public class ServerImp implements Server {
         return msl;
     }
 
-    public void addMessageInDataBase(Message message) {
-        for (ClientContainer client : clients) {
-            if (client.currentUserNo == message.getAddresserNo()) continue;
 
-            try {
-                dbAdder.addMessage(client.mailClient.sendMessage());
-            } catch (RemoteException e) {
-                e.printStackTrace();
-            }
-        }
-    }
 
 
     private class ClientContainer {

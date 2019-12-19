@@ -2,9 +2,15 @@ package core;
 
 import model.ClientModel;
 import model.ClientModelManager;
+import model.mailModel.IMailBox;
+import model.mailModel.MailBox;
+
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
 
 public class ModelFactory {
     private ClientModel clientModel;
+    private IMailBox iMailBox;
 
     public ClientModel getClientModel() {
         // lazy Instantiation
@@ -12,7 +18,22 @@ public class ModelFactory {
             clientModel = new ClientModelManager();
         }
         return clientModel;
+
     }
 
+
+    public IMailBox getIMailBox(){
+        if (iMailBox == null) {
+            try
+            {
+                iMailBox = new MailBox(getClientModel());
+            }
+            catch (RemoteException | NotBoundException e)
+            {
+                e.printStackTrace();
+            }
+        }
+        return iMailBox;
+    }
     // more models like wishList , payment...
 }

@@ -214,14 +214,14 @@ public class ViewHandler {
         messageStage.showAndWait();
     }
 
-    public void openTalking() {
+    public void openTalking(int accountNumber) {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../view/mailBox/MailBoxView.fxml"));
+        loader.setLocation(getClass().getResource("../view/talking/TalkingView.fxml"));
 
         try {
             Parent root = loader.load();
             TalkingController ctrl = loader.getController();
-            ctrl.init(viewModelFactory.getTalkingVM(), this);
+            ctrl.init(viewModelFactory.getTalkingVM(accountNumber), this);
             talkingScene = new Scene(root);
 
         } catch (IOException e) {

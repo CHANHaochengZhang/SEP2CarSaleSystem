@@ -6,13 +6,10 @@ import model.buyerModel.BuyerModel;
 import model.carModel.Car;
 import model.carModel.CarCreate;
 import model.carModel.CarModel;
-import model.carModel.Model;
 import model.displayCarModel.DisplayCarImp;
 import model.displayCarModel.DisplayCarModel;
 import model.loginModel.LoginImp;
 import model.loginModel.LoginModel;
-import model.mailModel.MailModel;
-import model.mailModel.MailModelImp;
 import model.mailModel.Message;
 import model.sellerModel.Seller;
 import model.sellerModel.SellerAdd;
@@ -43,7 +40,6 @@ public class ClientModelManager implements ClientModel {
     private SellerModel sellerModel;
     private CarModel carModel;
     private DisplayCarModel displayCarModel;
-    private MailModel mailModel;
 
     private PropertyChangeSupport support = new PropertyChangeSupport(this);
 
@@ -54,7 +50,6 @@ public class ClientModelManager implements ClientModel {
             sellerModel = new SellerAdd();
             carModel = new CarCreate();
             displayCarModel = new DisplayCarImp();
-            mailModel = new MailModelImp();
         } catch (RemoteException | NotBoundException e) {
             e.printStackTrace();
         }
@@ -177,7 +172,6 @@ public class ClientModelManager implements ClientModel {
             support.addPropertyChangeListener(listener);
         } else {
             support.addPropertyChangeListener(eventName, listener);
-
         }
     }
 

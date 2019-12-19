@@ -3,7 +3,6 @@ package model.buyerModel;
 
 import Server.Server;
 
-
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;

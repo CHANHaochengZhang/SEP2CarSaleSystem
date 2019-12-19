@@ -14,6 +14,8 @@ public interface Server extends Remote {
 
     boolean registerClient(IMailBox mb, int currentUserNo) throws RemoteException;
 
+    void addMessage(Message message) throws RemoteException;
+
     ArrayList<Message> getMessage() throws RemoteException;
 
     ArrayList<Car> getCar() throws RemoteException;

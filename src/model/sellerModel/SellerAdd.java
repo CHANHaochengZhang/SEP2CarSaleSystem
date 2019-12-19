@@ -2,7 +2,6 @@ package model.sellerModel;
 
 
 import Server.Server;
-import model.sellerModel.Seller;
 
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;

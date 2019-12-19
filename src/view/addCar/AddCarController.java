@@ -89,6 +89,7 @@ public class AddCarController {
                 alert.setHeaderText("Something wrong with car information");
                 alert.setContentText("Please check");
                 alert.showAndWait();
+
             } else if (description.getText() == null) {
                 description.setText("");
             } else {
@@ -99,6 +100,8 @@ public class AddCarController {
                 alert.setHeaderText("Create new car Successfully");
                 alert.setContentText("You can find your car in the car list");
                 alert.showAndWait();
+                viewHandler.closeCar();
+                viewHandler.openCarList();
             }
         }
     }
