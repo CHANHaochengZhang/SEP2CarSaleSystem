@@ -132,7 +132,6 @@ public class DisplayCarImp implements DisplayCarModel {
             }
             return newCars;
         } else
-            System.out.println("nmsl");
             return cars;
     }
 

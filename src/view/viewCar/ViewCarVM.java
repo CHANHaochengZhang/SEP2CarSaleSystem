@@ -59,8 +59,9 @@ public class ViewCarVM {
         this.lowerMile = lowerMile;
         this.upperMile = upperMile;
     }
-    public void rangeFilter(){
+
+    public void rangeFilter() {
         cars.clear();
-        cars.addAll(clientModel.filter(lowerPrice,upperPrice,lowerMile,upperMile));
+        cars.addAll(clientModel.filter(lowerPrice, upperPrice, lowerMile, upperMile));
     }
 }
