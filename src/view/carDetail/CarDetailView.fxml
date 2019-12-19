@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="887.0" prefWidth="674.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.carDetail.CarDetailController">
+   <children>
+      <Button layoutX="552.0" layoutY="14.0" mnemonicParsing="false" onAction="#openTalkingView" text="Talk to seller" />
+      <Label layoutX="127.0" layoutY="83.0" prefHeight="36.0" prefWidth="131.0" text="Car Name:">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="276.0" layoutY="142.0" text="Year of production:" />
+      <Label layoutX="284.0" layoutY="200.0" text="Mileage(in km):" />
+      <Label layoutX="314.0" layoutY="269.0" text="Brand:" />
+      <Label layoutX="278.0" layoutY="323.0" text="Transmission type:" />
+      <Label layoutX="312.0" layoutY="382.0" text="Model:" />
+      <Label layoutX="229.0" layoutY="444.0" prefHeight="15.0" prefWidth="174.0" text="Maximum capacity of the car" />
+      <Label layoutX="298.0" layoutY="572.0" text="Weight(kg):" />
+      <Label layoutX="227.0" layoutY="629.0" text="Maximum load capacity of the car(kg):" />
+      <Label layoutX="252.0" layoutY="695.0" text="Top speed of the car(km/h):" />
+      <VBox layoutX="220.0" layoutY="495.0" prefHeight="36.0" prefWidth="218.0" />
+      <HBox layoutX="55.0" layoutY="33.0" />
+      <VBox layoutX="46.0" layoutY="150.0" prefHeight="133.0" prefWidth="214.0">
+         <children>
+            <Label text="Seller Info:">
+               <font>
+                  <Font size="26.0" />
+               </font></Label>
+            <HBox prefHeight="26.0" prefWidth="196.0">
+               <children>
+                  <Label prefHeight="15.0" prefWidth="79.0" text="Seller Name:">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Text fx:id="sellerName" strokeType="OUTSIDE" strokeWidth="0.0" text=" " wrappingWidth="111.740234375" />
+               </children>
+               <VBox.margin>
+                  <Insets top="3.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="26.0" prefWidth="205.0">
+               <children>
+                  <Label prefHeight="15.0" prefWidth="69.0" text="Phone No:">
+                     <HBox.margin>
+                        <Insets right="15.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Text fx:id="sellerPhone" strokeType="OUTSIDE" strokeWidth="0.0" text=" " wrappingWidth="110.990234375" />
+               </children>
+               <VBox.margin>
+                  <Insets top="3.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="26.0" prefWidth="196.0">
+               <children>
+                  <Label prefHeight="15.0" prefWidth="89.0" text="Address:">
+                     <HBox.margin>
+                        <Insets right="25.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Text fx:id="sellerAddress" strokeType="OUTSIDE" strokeWidth="0.0" text=" " wrappingWidth="129.490234375" />
+               </children>
+               <VBox.margin>
+                  <Insets top="3.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+      <Label layoutX="31.0" layoutY="754.0" text="Description:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Text fx:id="priceOfCar" layoutX="111.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="180.0">
+         <font>
+            <Font size="16.0" />
+         </font></Text>
+      <Text fx:id="carName" layoutX="282.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " wrappingWidth="344.0">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Text fx:id="yearOfProduction" layoutX="478.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " wrappingWidth="147.240234375" />
+      <Text fx:id="mileage" layoutX="478.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " wrappingWidth="147.240234375" />
+      <Text fx:id="typeOfTransmission" layoutX="478.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " wrappingWidth="147.240234375" />
+      <Text fx:id="carModels" layoutX="478.0" layoutY="394.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " wrappingWidth="147.240234375" />
+      <Text fx:id="maxCapacity" layoutX="478.0" layoutY="455.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " wrappingWidth="147.240234375" />
+      <Text fx:id="fuelConsumption" layoutX="478.0" layoutY="506.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " wrappingWidth="147.240234375" />
+      <Text fx:id="maxLoadCapacity" layoutX="478.0" layoutY="640.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " wrappingWidth="147.240234375" />
+      <Text fx:id="topSpeed" layoutX="478.0" layoutY="706.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " wrappingWidth="147.240234375" />
+      <Text fx:id="description" layoutX="95.0" layoutY="811.0" opacity="0.45" strokeType="OUTSIDE" wrappingWidth="472.240234375" />
+      <Text fx:id="weight" layoutX="478.0" layoutY="583.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " wrappingWidth="147.240234375" />
+      <Label layoutX="219.0" layoutY="495.0" prefHeight="15.0" prefWidth="219.0" text="Average fuel consumption of the car:" />
+      <Label layoutX="269.0" layoutY="513.0" prefHeight="22.0" prefWidth="165.0" text="(number of litres per 100km)" />
+      <Text fx:id="brand" layoutX="478.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " wrappingWidth="147.240234375" />
+      <Button layoutX="19.0" layoutY="14.0" mnemonicParsing="false" onAction="#backToCarList" text="Back" />
+      <Label layoutX="60.0" layoutY="57.0" text="Price:" />
+   </children>
+</AnchorPane>
