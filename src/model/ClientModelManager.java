@@ -96,24 +96,6 @@ public class ClientModelManager implements ClientModel {
         return displayCarModel.getSellerByCarId(carAccountNo);
     }
 
-    //TODO: mail
-    @Override
-    public void sendMessage(Message message) {
-
-    }
-
-    //TODO: mail
-    @Override
-    public ArrayList<Message> getAllMessage() {
-        return null;
-    }
-
-    //TODO: mail
-    @Override
-    public ArrayList<Message> getMessageByAddresser(int currentNo, int addresserNo) {
-        return null;
-    }
-
     @Override
     public void setCurrentUser(int currentUserNo) {
         System.out.println("current user is " + currentUserNo);
@@ -192,14 +174,6 @@ public class ClientModelManager implements ClientModel {
     @Override
     public void removePropertyChangeListener(PropertyChangeListener listener) {
         support.removePropertyChangeListener(listener);
-    }
-
-    // get time for message
-    private String calcTimeStamp() {
-        SimpleDateFormat sdfDate =
-                new SimpleDateFormat("yyyy/MM/dd HH:mm");
-        Date now = new Date();
-        return sdfDate.format(now);
     }
 
 

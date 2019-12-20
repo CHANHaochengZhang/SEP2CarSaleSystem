@@ -23,7 +23,7 @@ public class ModelFactory {
 
 
     public IMailBox getIMailBox(){
-        if (iMailBox == null) {
+
             try
             {
                 iMailBox = new MailBox(getClientModel());
@@ -32,7 +32,7 @@ public class ModelFactory {
             {
                 e.printStackTrace();
             }
-        }
+
         return iMailBox;
     }
     // more models like wishList , payment...

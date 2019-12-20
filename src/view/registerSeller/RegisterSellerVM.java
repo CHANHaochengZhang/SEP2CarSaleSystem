@@ -2,6 +2,7 @@ package view.registerSeller;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.scene.control.TextField;
 import model.ClientModel;
 import model.sellerModel.Seller;
 
@@ -89,5 +90,19 @@ public class RegisterSellerVM {
         String accString;
         accString = String.valueOf(accInt);
         return accString;
+    }
+
+    public void numeric(TextField textField) {
+
+
+        textField.textProperty().addListener((observable, oldValue, newValue) -> {
+
+            if (newValue != null) {
+                if (!newValue.matches("\\d*")) {
+                    textField.setText(newValue.replaceAll("[^\\d]", ""));
+                }
+            }
+
+        });
     }
 }

@@ -3,6 +3,7 @@ package view.carDetail;
 import core.ViewHandler;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.text.Text;
 import model.carModel.Car;
 import model.sellerModel.Seller;
@@ -97,7 +98,16 @@ public class CarDetailController {
     }
 
     public void openTalkingView(ActionEvent actionEvent) {
-        viewHandler.openTalking(accountNo);
+        if (viewModel.getLogin()) {
+            viewHandler.openTalking(accountNo);
+        } else {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Warning Dialog");
+            alert.setHeaderText("Sorry, Error of Talking");
+            alert.setContentText("Please Login");
+
+            alert.showAndWait();
+        }
 
     }
 

@@ -11,7 +11,6 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
 public class MailBox implements IMailBox{
-    private Message message;
     private int clientID;
     private ClientModel clientModel;
     Server server;

@@ -43,6 +43,8 @@ public class RegisterSellerController {
 
         viewHandler = vh;
         viewModel = vm;
+        viewModel.numeric(streetNumber);
+        viewModel.numeric(postalCode);
         accountNumber.setText(viewModel.getAccToString());
         userName.textProperty().bindBidirectional(viewModel.userNameProperty());
         password.textProperty().bindBidirectional(viewModel.passwordProperty());

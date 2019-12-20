@@ -20,5 +20,7 @@ public class CarDetailVM {
         return clientModel.getSellerInfoBycarNumber(getCar().getSellerNo());
     }
 
-
+    public Boolean getLogin() {
+        return clientModel.getLogInSuccess();
+    }
 }

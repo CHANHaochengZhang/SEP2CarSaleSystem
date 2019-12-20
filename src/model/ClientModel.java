@@ -2,8 +2,6 @@ package model;
 
 import model.buyerModel.Buyer;
 import model.carModel.Car;
-import model.carModel.Model;
-import model.mailModel.Message;
 import model.sellerModel.Seller;
 
 import java.util.ArrayList;
@@ -40,11 +38,6 @@ public interface ClientModel extends PropertyChangeObserver {
     // insert sellerNo to get car/cars //test ok
     Seller getSellerInfoBycarNumber(int carAccountNo);
 
-    void sendMessage(Message message);
-
-    ArrayList<Message> getAllMessage();
-
-    ArrayList<Message> getMessageByAddresser(int currentNo, int addresserNo);
 
     //test ok
     void setCurrentUser(int currentUserNo);
